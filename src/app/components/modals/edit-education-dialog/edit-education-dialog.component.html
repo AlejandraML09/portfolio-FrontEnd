@@ -1,0 +1,28 @@
+<div class="popup-container">
+    <h2 mat-dialog-title>Educación</h2>
+    <mat-dialog-content class="mat-typography">
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputInstitucion" class="form-label">Institución Educativa</label>
+          <input type="institucion" [(ngModel)]="data.portfolioData.educaciones[data.educationIndex].escuela"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputInstitucion">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputTitulo" class="form-label">Titulo</label>
+          <input type="titulo" [(ngModel)]="data.portfolioData.educaciones[data.educationIndex].titulo"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputTitulo">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputInicio" class="form-label">Fecha de inicio:</label>
+          <input type="ubicacion" [(ngModel)]="data.portfolioData.educaciones[data.educationIndex].inicio"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputInicio">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputFin" class="form-label">Fecha de finalización:</label>
+            <input type="fin" [(ngModel)]="data.portfolioData.educaciones[data.educationIndex].fin" class="form-control" id="exampleInputFin">
+          </div>
+      </form>
+    
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button  class="btn btn-primary" mat-button mat-dialog-close>Cancel</button>
+      <button  class="btn btn-primary"  mat-button [mat-dialog-close]="data.portfolioData" cdkFocusInitial>Guardar</button>
+    </mat-dialog-actions>
+  </div>

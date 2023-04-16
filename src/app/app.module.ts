@@ -16,6 +16,7 @@ import { EditHeaderDialogComponent } from './components/modals/edit-header-dialo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule} from '@angular/material/dialog';
 import { EditExperienceDialogComponent } from './components/modals/edit-experience-dialog/edit-experience-dialog.component';
+import { EditEducationDialogComponent } from './components/modals/edit-education-dialog/edit-education-dialog.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { EditExperienceDialogComponent } from './components/modals/edit-experien
     PortfolioComponent,
     EditHeaderDialogComponent,
     EditExperienceDialogComponent,
+    EditEducationDialogComponent,
 
   ],
   imports: [

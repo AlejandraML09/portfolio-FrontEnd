@@ -5,6 +5,7 @@ import { Educacion, Experiencia, PortfolioData } from 'src/app/model/portfolioda
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { EditHeaderDialogComponent } from '../modals/edit-header-dialog/edit-header-dialog.component';
 import { EditExperienceDialogComponent } from '../modals/edit-experience-dialog/edit-experience-dialog.component';
+import { EditEducationDialogComponent } from '../modals/edit-education-dialog/edit-education-dialog.component';
 
 @Component({
   selector: 'app-experience',
@@ -36,23 +37,29 @@ export class ExperienceComponent {
     let dataForModal = { 
       data: {
         portfolioData: this.portfolioData,
-        experienceIndex: index
+        experienceIndex: index,
       }
     }
     console.log(dataForModal)
     const dialogRef = this.dialog.open(EditExperienceDialogComponent, dataForModal);
-
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
 
-  // openEducationEditDialog(index: number) {
-  //   const dialogRef = this.dialog.open(EditExperienceDialogComponent, { data: this.portfolioData});
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log(`Dialog result: ${result}`);
-  //   });
-  // }
+  openEducationEditDialog(index: number) {
+    let dataForModal = { 
+      data: {
+        portfolioData: this.portfolioData,
+        educationIndex: index,
+      }
+    }
+
+    const dialogRef = this.dialog.open(EditEducationDialogComponent, dataForModal);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
 
 }

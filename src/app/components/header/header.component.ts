@@ -37,11 +37,8 @@ export class HeaderComponent  {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${JSON.stringify(result)}`);
-      if(result == "") {
-        
-      } else {
+      if(result !== "") {
         this.portfolioService.editPortfolio(this.portfolioHeader.id,result).subscribe(putResult => console.log('esto es el putResult', putResult))
-
       }
     });
   }
