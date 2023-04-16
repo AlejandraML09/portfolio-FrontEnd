@@ -1,0 +1,38 @@
+.experience-container {
+    margin-left: 2em;
+    padding: 10px;
+}
+
+.experience-details-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    flex-wrap: wrap;
+}
+
+#experience-details {
+    list-style-type: none;
+
+}
+
+.experience-details-icon {
+    object-fit: contain;
+    width: 100px;
+    height: 100px;
+    margin-right: 2em;
+    
+}
+.experience-title {
+    font-size: 2.5em;
+
+}
+
+.experience-edit-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}

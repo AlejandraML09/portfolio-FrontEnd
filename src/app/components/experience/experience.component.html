@@ -1,0 +1,28 @@
+
+    <div class="card_container">
+        <div class="experience-container">
+            <div class="experience-edit-container">
+                <h1 class="card-title">Experiencia</h1>
+                <div class="edit-button-container">
+                    <fa-icon [icon]="faPen" size="lg"></fa-icon>
+                </div>
+            </div>
+            <div *ngFor="let experience of experienceList" class="experience-details-container">
+                <a [href]="experience.puesto_url"><img class="experience-details-icon" [src]="experience.puesto_image" alt=""></a>
+                <div>
+                    <h2 class="experience-title">{{experience.puesto}}</h2>
+                    <p>{{experience.compania}}</p>
+                        <p class="experience-years">{{experience.inicio | date: 'MMM yyyy'}} -  {{experience.fin | date: 'MMM yyyy' }}</p>
+                </div>
+            </div>
+            <h1 class="card-title">Educación</h1>
+            <div *ngFor="let education of educationList" class="experience-details-container">
+                <a [href]="education.escuela_url"><img class="experience-details-icon" [src]="education.escuela_image" alt=""></a>
+                <div>
+                    <h2 class="experience-title">{{education.titulo}}</h2>
+                    <p>{{education.escuela}}</p>
+                    <p>{{education.inicio | date: 'MMM yyyy'}} -  {{education.fin | date: 'MMM yyyy' }}.</p>
+                </div>
+            </div>
+        </div>
+    </div>

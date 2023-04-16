@@ -1,0 +1,72 @@
+{
+    "name": "Alejandra Melisa López",
+    "bannerImage": "https://i.ibb.co/rvqYFPn/una-taza-de-javascript.png",
+    "profilePicture": "https://i.ibb.co/MD5CDsW/1643384816564.jpg",
+    "position": "Estudiante",
+    "institution": "Universidad de Buenos Aires",
+    "location": "Buenos Aires, Argentina",
+    "currentCompany": {
+        "name": "YGMA Software",
+        "img": "https://i.ibb.co/bd8yQYt/logohome.png",
+        "url": "https://flexy.com.ar/"
+    },
+    "currentEducation": {
+        "name": "CS50",
+        "img": "https://i.ibb.co/8Y0HVm6/harvard-logo.png",
+        "url": "#"
+    },
+    "aboutMe": "Hola! Mi nombre es Alejandra y soy estudiante de Programación. Me encuentro trabajando en un proyecto freelance en una aplicación mobile en React Native con Expo, dónde aprendí el manejo de Git, interactuar con APIs, refactorear código (entre otras cosas) y lo más importante, trabajar en equipo. En este momento me encuentro búscando oportunidades para poder potenciar mi carrera como programadora.",
+    "experience": [
+        {
+            "position": "React Native Developer",
+            "company": "YGMA Software",
+            "img": "https://i.ibb.co/bd8yQYt/logohome.png",
+            "contractHours": "Part-time",
+            "experienceYears": "Febrero 2022 - Actualidad",
+            "url": "https://flexy.com.ar/"
+        }
+    ],
+    "education": [
+        {
+            "courseTitle": "CS50: Introduction to Computer Science",
+            "company": "Harvard University",
+            "img": "https://i.ibb.co/8Y0HVm6/harvard-logo.png",
+            "contractHours": "Part-time",
+            "educationYears": "Enero 2022 - Diciembre 2022",
+            "url": "https://cs50.harvard.edu/x/2023/"
+        },
+        {
+            "courseTitle": "Full-Stack Engineer",
+            "company": "EducacionIT",
+            "img": "https://i.ibb.co/MsJwBWt/Educacion-IT-logo.png",
+            "contractHours": "Part-time",
+            "educationYears": "Agosto 2021 - Febrero 2022",
+            "url": "https://www.educacionit.com/"
+        }
+    ],
+    "projects": [
+        {
+            "projectTitle": "Flexy",
+            "company": "YGMA Software",
+            "description": "Desarrollo de aplicación mobile en React Native con Expo, para empresa en el rubro de bienes raíces, ofreciendo servicios para particulares y agentes inmobiliarios. Mis tareas han sido, entre otras, las siguientes: Interacción con APIs. Implementación de maquetados de interfaces. Manejo de Git como herramienta de control de versiones. Refactoreo de código para hacerlo más reutilizable y modular.Bugfixing y mejoras de código legacy.",
+            "link": "https://flexy.com.ar/",
+            "img": "https://i.ibb.co/bd8yQYt/logohome.png"
+            
+        },
+        {
+            "projectTitle": "CS50: Introduction to Computer Science",
+            "company": "Harvard University",
+            "description": "Este es mi proyecto final para el curso de Harvard University CS50 : Introduction to Computer Science. Fue muy difícil, por momentos tuve que dejarlo y volver a empezar. Me enfrenté con muchísimos desafíos, como aprender a lidiar con la frustración, y modificar mi manera de pensar para mejorar mi resolución de problemas lógicos. También tuve una pequeña introducción a otros lenguajes, las estructuras de datos y por último la implementación de mi proyecto final, el cuál es una fan page de Game of Thrones, que obtiene sus datos a través de una API propia que hice con Node.JS y Express, el cuál que también tuvo sus retos.",
+            "link": "http://cs50.ygmasoft.com/",
+            "img": "https://i.ibb.co/8Y0HVm6/harvard-logo.png"
+            
+        },
+        {
+            "projectTitle": "Connecticus - EducacionIT",
+            "company": "EducacionIT",
+            "description": "Este es mi proyecto final realizado en el Bootcamp FullStack de EducacionIT. Se trata de una página responsive de ecommerce realizada con HTML, SCSS, Handlebars y Javascript. Este proyecto representa mis primeros pasos en la programación, y ¡estoy muy feliz con el resultado! Fue difícil, pero valió la pena el esfuerzo. Los invito a ver mi proyecto clickeando en enlace!.",
+            "link": "https://connecticus-shop.glitch.me/",
+            "img": "https://i.ibb.co/MsJwBWt/Educacion-IT-logo.png"
+        }
+    ]
+}

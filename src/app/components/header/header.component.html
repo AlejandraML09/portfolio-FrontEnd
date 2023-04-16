@@ -1,0 +1,41 @@
+<div class="card_container">
+    <div id="profile-background" 
+    [ngStyle]="{'background-image':'url(' + portfolioHeader.banner_image+ ')'}">
+        <img class="profile-image" [src]="portfolioHeader.profile_picture" alt="">
+        <div class="btn-edit"><a href="#" class="btn-right"></a></div>
+    </div>
+    <div class="edit-button-container edit_pen">
+        <fa-icon [icon]="faPen" size="lg"></fa-icon>
+    </div>
+    <div class="info-data-container">
+        <div id="info-data">
+            <div>
+                <h1>{{portfolioHeader.nombre + " "  + portfolioHeader.apellido}}</h1>
+                <div id="info-company">{{portfolioHeader.experiencias[0].puesto}}</div>
+                <div id="info-contact">
+                    <span>{{portfolioHeader.nacionalidad}}</span>
+                    <span><a href="#"> Información de Contacto</a></span>
+                </div>
+            </div>
+    
+            <ul id="info-details">
+                <li>
+                    <a class="info-details-container" href="#">
+                        <img class="info-details-icon" [src]="portfolioHeader.experiencias[0].puesto_image" alt="">
+                        <h2>{{portfolioHeader.experiencias[0].compania}}</h2>
+                    </a>
+                </li>
+                <li>
+                    <a class="info-details-container" href="#">
+                        <img class="info-details-icon" [src]="portfolioHeader.educaciones[0].escuela_image" alt="">
+                        <h2>{{portfolioHeader.educaciones[0].escuela}}</h2>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="info-buttons-container"><button type="button" class="btn btn-primary">Tengo interés en</button>
+            <button type="button" class="btn btn-light">Añadir Sección</button>
+            <button type="button" class="btn btn-light">Más</button>
+        </div>
+    </div>
+</div>

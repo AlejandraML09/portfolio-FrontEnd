@@ -1,0 +1,10 @@
+#about-me {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#about-me-container {
+    margin-left: 2em;
+    padding: 10px;
+}

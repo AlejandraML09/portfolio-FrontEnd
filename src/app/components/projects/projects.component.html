@@ -1,0 +1,16 @@
+
+<div class="card_container">
+    <div class="experience-container">
+        <h1 class="card-title">Proyectos</h1>
+        <div *ngFor="let projects of projectsList" class="experience-details-container">
+            <div>
+                <a [href]="projects.link">
+                    <h2 class="experience-title">{{projects.projectTitle}}</h2>
+                </a>
+                <h3>{{projects.company}}</h3>
+                <p>{{projects.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
