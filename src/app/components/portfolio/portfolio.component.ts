@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { PortfolioData } from 'src/app/model/portfoliodata';
 import { PortfolioService } from 'src/app/services/portfolio.service';
-
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
-  styleUrls: ['./portfolio.component.css']
+  styleUrls: ['./portfolio.component.css'],
 })
 export class PortfolioComponent implements OnInit {
-  portfolioData:PortfolioData = {
+  portfolioData: PortfolioData = {
     id: 0,
     nombre: '',
     apellido: '',
@@ -22,14 +22,20 @@ export class PortfolioComponent implements OnInit {
     banner_image: '',
     profile_picture: '',
     contacto: '',
-    experiencias: []
+    experiencias: [],
   };
-  constructor(private dataPortfolio: PortfolioService) {}
+  id: number = 0;
+
+  constructor(
+    private dataPortfolio: PortfolioService,
+    private route: ActivatedRoute
+  ) {}
   ngOnInit() {
-    this.dataPortfolio.getPortfolio(3).subscribe(data => {
-    this.portfolioData=data;  
-    })
-
-
+    this.route.params.subscribe((params) => {
+      this.id = +params['id'];
+      this.dataPortfolio.getPortfolio(this.id).subscribe((data) => {
+        this.portfolioData = data;
+      });
+    });
   }
 }

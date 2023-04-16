@@ -12,8 +12,13 @@ export class PortfolioService {
   getData():Observable<any> {
     return this.http.get("./assets/data/data.json");
   }
+
   getPortfolio(id:number):Observable<PortfolioData> {
   return this.http.get<PortfolioData>(`http://localhost:8080/persona/${id}`);
-  
   }
+
+  editPortfolio(id:number, portfolioData:PortfolioData): Observable<any> {
+    return this.http.put<PortfolioData>(`http://localhost:8080/persona/${id}`, portfolioData);
+  }
+
 }
