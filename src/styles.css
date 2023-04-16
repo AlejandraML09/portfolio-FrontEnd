@@ -14,8 +14,6 @@
     margin-left: 2em;
 }
 
-
-
 .btn-primary {
     margin-left: 2em;
 }
@@ -23,7 +21,6 @@
 .info-buttons-container {
     padding-bottom: 1em;
 }
-
 
 .card-title {
     margin-top: 20px;
@@ -36,3 +33,5 @@
     padding: 1.3em;
 }
 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

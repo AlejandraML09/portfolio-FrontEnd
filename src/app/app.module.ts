@@ -12,6 +12,10 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { EditHeaderDialogComponent } from './components/modals/edit-header-dialog/edit-header-dialog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule} from '@angular/material/dialog';
+import { EditExperienceDialogComponent } from './components/modals/edit-experience-dialog/edit-experience-dialog.component';
 
 
 @NgModule({
@@ -23,6 +27,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ProjectsComponent,
     LogInComponent,
     PortfolioComponent,
+    EditHeaderDialogComponent,
+    EditExperienceDialogComponent,
 
   ],
   imports: [
@@ -30,7 +36,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
