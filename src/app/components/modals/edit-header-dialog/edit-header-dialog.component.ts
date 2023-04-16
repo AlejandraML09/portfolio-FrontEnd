@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { PortfolioData } from 'src/app/model/portfoliodata';
 
 @Component({
@@ -8,5 +8,11 @@ import { PortfolioData } from 'src/app/model/portfoliodata';
   styleUrls: ['./edit-header-dialog.component.css']
 })
 export class EditHeaderDialogComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public portfolioData: PortfolioData) {}
+  constructor(
+    public dialogRef: MatDialogRef<EditHeaderDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public portfolioData: PortfolioData) {}
+
+    onNoClick(): void {
+      this.dialogRef.close();
+    }
 }

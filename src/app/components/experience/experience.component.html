@@ -4,10 +4,13 @@
             <div class="experience-edit-container">
                 <h1 class="card-title">Experiencia</h1>
                 <div class="edit-button-container">
-                    <fa-icon [icon]="faPen" size="lg"></fa-icon>
+                    <button (click)="openDialog()">
+                        <fa-icon [icon]="faPen" size="lg">
+                        </fa-icon>
+                    </button>
                 </div>
             </div>
-            <div *ngFor="let experience of experienceList" class="experience-details-container">
+            <div *ngFor="let experience of portfolioData.experiencias" class="experience-details-container">
                 <a [href]="experience.puesto_url"><img class="experience-details-icon" [src]="experience.puesto_image" alt=""></a>
                 <div>
                     <h2 class="experience-title">{{experience.puesto}}</h2>
@@ -16,7 +19,7 @@
                 </div>
             </div>
             <h1 class="card-title">Educación</h1>
-            <div *ngFor="let education of educationList" class="experience-details-container">
+            <div *ngFor="let education of portfolioData.educaciones" class="experience-details-container">
                 <a [href]="education.escuela_url"><img class="experience-details-icon" [src]="education.escuela_image" alt=""></a>
                 <div>
                     <h2 class="experience-title">{{education.titulo}}</h2>

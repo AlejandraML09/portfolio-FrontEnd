@@ -33,5 +33,10 @@
     padding: 1.3em;
 }
 
+.popup-container {
+    padding: 2em;
+    width:1000px;
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

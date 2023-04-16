@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EditHeaderDialogComponent } from './components/modals/edit-header-dialog/edit-header-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -38,7 +38,8 @@ import { EditExperienceDialogComponent } from './components/modals/edit-experien
     ReactiveFormsModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

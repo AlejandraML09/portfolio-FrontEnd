@@ -1,1 +1,33 @@
-<p>edit-experience-dialog works!</p>
+<h2 mat-dialog-title>Editar experiencias y educaciones</h2>
+<mat-dialog-content class="mat-typography">
+    <form>
+        <div class="mb-3">
+            <label for="exampleInputNombre" class="form-label">Nombre</label>
+            <input type="nombre" class="form-control" id="exampleInputNombre">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputApellido" class="form-label">Apellidos</label>
+            <input type="apellido" class="form-control" id="exampleInputApellido">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPuesto" class="form-label">Puesto</label>
+            <input type="puesto" class="form-control" id="exampleInputPuesto">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputContacto" class="form-label">Contacto</label>
+            <input type="puesto" class="form-control" id="exampleInputContacto">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputUbicacion" class="form-label">Ubicación</label>
+            <input type="ubicacion" class="form-control" id="exampleInputUbicacion">
+        </div>
+    </form>
+
+
+    <h3>{{ portfolioData.apellido}}</h3>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button class="btn btn-primary" mat-button mat-dialog-close>Cancel</button>
+    <button class="btn btn-primary" mat-button [mat-dialog-close]="true" cdkFocusInitial>Guardar</button>
+</mat-dialog-actions>

@@ -22,6 +22,7 @@ export class HeaderComponent  {
     ocupacion: '',
     banner_image: '',
     profile_picture: '',
+    contacto: '',
     educaciones: [],
     experiencias: []
   }
@@ -34,7 +35,7 @@ export class HeaderComponent  {
     const dialogRef = this.dialog.open(EditHeaderDialogComponent, { data: this.portfolioHeader});
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      console.log(`Dialog result: ${JSON.stringify(result)}`);
     });
   }
 }

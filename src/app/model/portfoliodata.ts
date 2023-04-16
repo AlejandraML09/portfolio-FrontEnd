@@ -9,6 +9,7 @@ export type PortfolioData = {
   ocupacion: string;
   banner_image: string;
   profile_picture: string;
+  contacto: string;
   educaciones: Educacion[];
   experiencias: Experiencia[];
 };

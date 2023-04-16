@@ -21,6 +21,7 @@ export class PortfolioComponent implements OnInit {
     ocupacion: '',
     banner_image: '',
     profile_picture: '',
+    contacto: '',
     experiencias: []
   };
   constructor(private dataPortfolio: PortfolioService) {}
