@@ -1,33 +1,44 @@
-<h2 mat-dialog-title>Editar experiencias y educaciones</h2>
-<mat-dialog-content class="mat-typography">
-    <form>
-        <div class="mb-3">
-            <label for="exampleInputNombre" class="form-label">Nombre</label>
-            <input type="nombre" class="form-control" id="exampleInputNombre">
+    <!-- <div class="experience-container">
+        <div class="experience-details-container">
+            <a [href]="data.portfolioData.experiencias[data.experienceIndex].puesto_url"><img class="experience-details-icon" [src]="data.portfolioData.experiencias[data.experienceIndex].puesto_image" alt=""></a>
+            <div>
+                <h2 class="experience-title">{{data.portfolioData.experiencias[data.experienceIndex].puesto}}</h2>
+                <p>{{data.portfolioData.experiencias[data.experienceIndex].compania}}</p>
+                    <p class="experience-years">{{data.portfolioData.experiencias[data.experienceIndex].inicio | date: 'MMM yyyy'}} -  {{data.portfolioData.experiencias[data.experienceIndex].fin | date: 'MMM yyyy' }}</p>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="exampleInputApellido" class="form-label">Apellidos</label>
-            <input type="apellido" class="form-control" id="exampleInputApellido">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPuesto" class="form-label">Puesto</label>
-            <input type="puesto" class="form-control" id="exampleInputPuesto">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputContacto" class="form-label">Contacto</label>
-            <input type="puesto" class="form-control" id="exampleInputContacto">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputUbicacion" class="form-label">Ubicación</label>
-            <input type="ubicacion" class="form-control" id="exampleInputUbicacion">
-        </div>
-    </form>
+    </div> -->
 
-
-    <h3>{{ portfolioData.apellido}}</h3>
-
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-    <button class="btn btn-primary" mat-button mat-dialog-close>Cancel</button>
-    <button class="btn btn-primary" mat-button [mat-dialog-close]="true" cdkFocusInitial>Guardar</button>
-</mat-dialog-actions>
+    <div class="popup-container">
+        <h2 mat-dialog-title>Experiencia</h2>
+        <mat-dialog-content class="mat-typography">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputPuesto" class="form-label">Puesto</label>
+              <input type="puesto" [(ngModel)]="data.portfolioData.experiencias[data.experienceIndex].puesto"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputPuesto">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputNombreEmpresa" class="form-label">Nombre de la empresa</label>
+              <input type="nombre_empresa" [(ngModel)]="data.portfolioData.experiencias[data.experienceIndex].compania"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputNombreEmpresa">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputJornada" class="form-label">Tipo de Empleo</label>
+              <input type="jornada" [(ngModel)]="data.portfolioData.experiencias[data.experienceIndex].jornada"  [ngModelOptions]="{standalone: true}"
+               class="form-control" id="exampleInputJornada">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputInicio" class="form-label">Fecha de inicio:</label>
+              <input type="ubicacion" [(ngModel)]="data.portfolioData.experiencias[data.experienceIndex].inicio"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputInicio">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputFin" class="form-label">Fecha de finalización:</label>
+                <input type="fin" [(ngModel)]="data.portfolioData.experiencias[data.experienceIndex].fin" class="form-control" id="exampleInputFin">
+              </div>
+          </form>
+        
+        </mat-dialog-content>
+        <mat-dialog-actions align="end">
+          <button  class="btn btn-primary" mat-button mat-dialog-close>Cancel</button>
+          <button  class="btn btn-primary"  mat-button [mat-dialog-close]="data.portfolioData" cdkFocusInitial>Guardar</button>
+        </mat-dialog-actions>
+      </div>

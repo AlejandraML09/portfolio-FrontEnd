@@ -3,28 +3,39 @@
         <div class="experience-container">
             <div class="experience-edit-container">
                 <h1 class="card-title">Experiencia</h1>
+                
+            </div>
+            <div *ngFor="let experience of portfolioData.experiencias;let i = index" class="experience-details-container">
+                <div style="display: flex; flex-direction: row;">
+                    <a [href]="experience.puesto_url"><img class="experience-details-icon" [src]="experience.puesto_image" alt=""></a>
+                    <div>
+                        <h2 class="experience-title">{{experience.puesto}}</h2>
+                        <p>{{experience.compania}}</p>
+                        <p class="experience-years">{{experience.inicio | date: 'MMM yyyy'}} - {{experience.fin | date: 'MMM yyyy' }}</p>
+                    </div>
+                </div>
                 <div class="edit-button-container">
-                    <button (click)="openDialog()">
+                    <button (click)="openExperienceEditDialog(i)">
                         <fa-icon [icon]="faPen" size="lg">
                         </fa-icon>
                     </button>
                 </div>
             </div>
-            <div *ngFor="let experience of portfolioData.experiencias" class="experience-details-container">
-                <a [href]="experience.puesto_url"><img class="experience-details-icon" [src]="experience.puesto_image" alt=""></a>
-                <div>
-                    <h2 class="experience-title">{{experience.puesto}}</h2>
-                    <p>{{experience.compania}}</p>
-                        <p class="experience-years">{{experience.inicio | date: 'MMM yyyy'}} -  {{experience.fin | date: 'MMM yyyy' }}</p>
-                </div>
-            </div>
             <h1 class="card-title">Educación</h1>
-            <div *ngFor="let education of portfolioData.educaciones" class="experience-details-container">
-                <a [href]="education.escuela_url"><img class="experience-details-icon" [src]="education.escuela_image" alt=""></a>
-                <div>
-                    <h2 class="experience-title">{{education.titulo}}</h2>
-                    <p>{{education.escuela}}</p>
-                    <p>{{education.inicio | date: 'MMM yyyy'}} -  {{education.fin | date: 'MMM yyyy' }}.</p>
+            <div *ngFor="let education of portfolioData.educaciones;let i = index" class="experience-details-container">
+                <div style="display: flex; flex-direction: row;">
+                    <a [href]="education.escuela_url"><img class="experience-details-icon" [src]="education.escuela_image" alt=""></a>
+                    <div>
+                        <h2 class="experience-title">{{education.titulo}}</h2>
+                        <p>{{education.escuela}}</p>
+                        <p>{{education.inicio | date: 'MMM yyyy'}} -  {{education.fin | date: 'MMM yyyy' }}.</p>
+                    </div>
+                </div>
+                <div class="edit-button-container">
+                    <button (click)="openExperienceEditDialog(i)">
+                        <fa-icon [icon]="faPen" size="lg">
+                        </fa-icon>
+                    </button>
                 </div>
             </div>
         </div>

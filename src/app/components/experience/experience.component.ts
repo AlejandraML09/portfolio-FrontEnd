@@ -32,13 +32,27 @@ export class ExperienceComponent {
 
   constructor(public dialog: MatDialog) {}
 
-  openDialog() {
-    const dialogRef = this.dialog.open(EditExperienceDialogComponent, { data: this.portfolioData});
+  openExperienceEditDialog(index: number) {
+    let dataForModal = { 
+      data: {
+        portfolioData: this.portfolioData,
+        experienceIndex: index
+      }
+    }
+    console.log(dataForModal)
+    const dialogRef = this.dialog.open(EditExperienceDialogComponent, dataForModal);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+  // openEducationEditDialog(index: number) {
+  //   const dialogRef = this.dialog.open(EditExperienceDialogComponent, { data: this.portfolioData});
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log(`Dialog result: ${result}`);
+  //   });
+  // }
 
 
 }
