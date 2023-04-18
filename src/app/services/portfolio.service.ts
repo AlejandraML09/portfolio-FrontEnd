@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PortfolioData } from '../model/portfoliodata';
+import { backendUrl } from 'src/globals';
 
 @Injectable({
   providedIn: 'root',
@@ -14,11 +15,11 @@ export class PortfolioService {
   }
 
   getPortfolio(id:number):Observable<PortfolioData> {
-  return this.http.get<PortfolioData>(`http://localhost:8080/persona/${id}`);
+  return this.http.get<PortfolioData>(`${backendUrl}/persona/${id}`);
   }
 
   editPortfolio(id:number, portfolioData:PortfolioData): Observable<any> {
-    return this.http.put<PortfolioData>(`http://localhost:8080/persona/${id}`, portfolioData);
+    return this.http.put<PortfolioData>(`${backendUrl}/persona/${id}`, portfolioData);
   }
 
 }
