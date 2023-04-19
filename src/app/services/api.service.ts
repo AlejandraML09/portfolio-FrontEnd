@@ -9,6 +9,6 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   login(username: string, password: string) {
-    return this.http.post<string>(backendUrl + '/auth/login', { username, password });
+    return this.http.post<any>(backendUrl + '/auth/login', { username, password });
   }
 }

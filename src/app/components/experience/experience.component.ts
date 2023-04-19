@@ -26,7 +26,8 @@ export class ExperienceComponent {
     profile_picture: '',
     contacto: '',
     educaciones: [],
-    experiencias: []
+    experiencias: [],
+    skills: []
   }
   
   faPen = faPen

@@ -42,13 +42,17 @@ export class LogInComponent implements OnInit {
     this.errors = [];
     // @ts-ignore
     this.apiService.login(this.form.get('username')?.value, this.form.get('password')?.value)
-      .subscribe((token: string) => {
+      .subscribe((response: Response) => {
+          // @ts-ignore  
+          let token = response.JWT
           console.log('Login response' + token);
+          
           let userObject = JSON.parse(atob(token.split('.')[1])); // Base 64 decode
           let user: User = new User(userObject.username, userObject.user_id);
+          // @ts-ignore
           this.loginService.setUserLoggedIn(user, token);
 
-          this.router.navigate(['/home']);
+          this.router.navigate(['/portfolio/'+ user.user_id ]);
         },
         (errorResponse: HttpErrorResponse) => {
           console.log('Error response', errorResponse);

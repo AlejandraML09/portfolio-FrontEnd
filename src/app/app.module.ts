@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule} from '@angular/material/dialog';
 import { EditExperienceDialogComponent } from './components/modals/edit-experience-dialog/edit-experience-dialog.component';
 import { EditEducationDialogComponent } from './components/modals/edit-education-dialog/edit-education-dialog.component';
+import { SkillComponent } from './components/skill/skill.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { EditEducationDialogComponent } from './components/modals/edit-education
     EditHeaderDialogComponent,
     EditExperienceDialogComponent,
     EditEducationDialogComponent,
+    SkillComponent,
 
   ],
   imports: [

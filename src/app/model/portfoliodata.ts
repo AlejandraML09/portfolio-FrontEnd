@@ -12,6 +12,7 @@ export type PortfolioData = {
   contacto: string;
   educaciones: Educacion[];
   experiencias: Experiencia[];
+  skills: Skills[];
 };
 
 export type Educacion = {
@@ -37,3 +38,26 @@ export type Experiencia = {
   puesto_url: string;
 
 }
+
+export type Skills = {
+  id: number;
+  lenguaje: string;
+  porcentaje_de_conocimiento: string;
+}
+
+export let emptyPorfolio: PortfolioData = {
+  id: 0,
+  nombre: '',
+  apellido: '',
+  educaciones: [],
+  fecha_nacimiento: new Date(),
+  nacionalidad: '',
+  email: '',
+  sobre_mi: '',
+  ocupacion: '',
+  banner_image: '',
+  profile_picture: '',
+  contacto: '',
+  experiencias: [],
+  skills:[],
+};

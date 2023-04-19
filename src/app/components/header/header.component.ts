@@ -25,7 +25,8 @@ export class HeaderComponent  {
     profile_picture: '',
     contacto: '',
     educaciones: [],
-    experiencias: []
+    experiencias: [],
+    skills: []
   }
 
   faPen = faPen

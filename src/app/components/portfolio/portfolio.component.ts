@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PortfolioData } from 'src/app/model/portfoliodata';
+import { LoginService } from 'src/app/services/login.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
@@ -23,12 +24,14 @@ export class PortfolioComponent implements OnInit {
     profile_picture: '',
     contacto: '',
     experiencias: [],
+    skills:[],
   };
   id: number = 0;
 
   constructor(
     private dataPortfolio: PortfolioService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public loginService: LoginService
   ) {}
   ngOnInit() {
     this.route.params.subscribe((params) => {
