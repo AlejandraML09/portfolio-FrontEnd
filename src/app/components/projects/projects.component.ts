@@ -1,24 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/services/portfolio.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { faArrowRightFromFile, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { Project } from 'src/app/model/portfoliodata';
+
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css']
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent  {
+  @Input() proyectos: Project[] = []
 
-  projectsList: any;
-  portfolioHeader: any;
-
-  constructor(private dataPortfolio: PortfolioService) {}
-  ngOnInit(): void {
-    this.dataPortfolio.getData().subscribe(data => {
-      console.log(data);
-      this.projectsList=data.projects;
-      this.portfolioHeader=data;
-    });
-  }
-
+  faArrowUpRightFromSquare = faArrowUpRightFromSquare
 
 }

@@ -1,9 +1,9 @@
-.experience-container {
-    margin-left: 2em;
+.projects-container {
     padding: 10px;
+    margin-left: 2em;
 }
 
-.experience-details-container {
+.projects-details-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -13,16 +13,17 @@
     flex-wrap: wrap;
 }
 
-#experience-details {
+#projects-details {
     list-style-type: none;
 
 }
 
-.experience-details-icon {
-    object-fit: contain;
-    width: 100px;
-    height: 100px;
-    margin-right: 2em;
-    
+.project-years {
+    margin: 0px 0px 0px 0px;
+}
+
+.btn-primary {
+    margin-left:0;
+    margin-bottom:0.5em;
 }
 

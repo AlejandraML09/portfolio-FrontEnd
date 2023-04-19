@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PortfolioData } from 'src/app/model/portfoliodata';
+import { PortfolioData, emptyPorfolio } from 'src/app/model/portfoliodata';
 import { LoginService } from 'src/app/services/login.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
@@ -10,22 +10,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   styleUrls: ['./portfolio.component.css'],
 })
 export class PortfolioComponent implements OnInit {
-  portfolioData: PortfolioData = {
-    id: 0,
-    nombre: '',
-    apellido: '',
-    educaciones: [],
-    fecha_nacimiento: new Date(),
-    nacionalidad: '',
-    email: '',
-    sobre_mi: '',
-    ocupacion: '',
-    banner_image: '',
-    profile_picture: '',
-    contacto: '',
-    experiencias: [],
-    skills:[],
-  };
+  portfolioData: PortfolioData = emptyPorfolio
   id: number = 0;
 
   constructor(

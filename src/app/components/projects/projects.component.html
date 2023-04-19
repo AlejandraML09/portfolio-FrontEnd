@@ -1,16 +1,16 @@
-
 <div class="card_container">
-    <div class="experience-container">
-        <h1 class="card-title">Proyectos</h1>
-        <div *ngFor="let projects of projectsList" class="experience-details-container">
+    <div class="projects-container">
+        <h3 class="card-title">Proyectos</h3>
+        <div *ngFor="let project of proyectos" class="projects-details-container">
             <div>
-                <a [href]="projects.link">
-                    <h2 class="experience-title">{{projects.projectTitle}}</h2>
-                </a>
-                <h3>{{projects.company}}</h3>
-                <p>{{projects.description}}</p>
+                <h4 class="projects-title">{{project.nombre_proyecto}}</h4>
+                <p class="projects-years">{{project.fecha_inicio | date: 'MMM yyyy'}} - {{project.fecha_final | date:
+                    'MMM yyyy' }}</p>
+                    <p>{{project.descripcion}}</p>
+            <a [href]="project.url"  class="btn btn-primary">Mostrar proyecto<fa-icon [icon]="faArrowUpRightFromSquare" size="lg"></fa-icon>
+            </a>
             </div>
+       
         </div>
     </div>
 </div>
-
