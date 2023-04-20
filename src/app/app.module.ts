@@ -18,6 +18,8 @@ import { MatDialogModule} from '@angular/material/dialog';
 import { EditExperienceDialogComponent } from './components/modals/edit-experience-dialog/edit-experience-dialog.component';
 import { EditEducationDialogComponent } from './components/modals/edit-education-dialog/edit-education-dialog.component';
 import { SkillComponent } from './components/skill/skill.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { EditAboutMeComponent } from './components/modals/edit-about-me/edit-about-me.component';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { SkillComponent } from './components/skill/skill.component';
     EditExperienceDialogComponent,
     EditEducationDialogComponent,
     SkillComponent,
+    NavbarComponent,
+    EditAboutMeComponent,
 
   ],
   imports: [

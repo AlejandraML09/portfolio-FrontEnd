@@ -1,0 +1,16 @@
+<div class="popup-container">
+    <h2 mat-dialog-title>Editar Información sobre ti:</h2>
+    <mat-dialog-content class="mat-typography">
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputNombre" class="form-label">Agrega una pequeña descripción sobre ti</label>
+          <textarea class="form-control" id="sobre_mi" rows="3" [(ngModel)]="portfolioData.sobre_mi"  [ngModelOptions]="{standalone: true}" ></textarea>
+        </div>
+      </form>
+    
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button  class="btn btn-primary" mat-button mat-dialog-close>Cancel</button>
+      <button  class="btn btn-primary"  mat-button [mat-dialog-close]="portfolioData" cdkFocusInitial>Guardar</button>
+    </mat-dialog-actions>
+  </div>

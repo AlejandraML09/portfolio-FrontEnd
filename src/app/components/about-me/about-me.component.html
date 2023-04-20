@@ -3,9 +3,12 @@
         <div id="about-me">
             <h1>Acerca de</h1>
             <div class="edit-button-container">
-                <fa-icon [icon]="faPen" size="lg"></fa-icon>
+                <button *ngIf="this.loginService.isLogged();" (click)="openDialog()">
+                    <fa-icon [icon]="faPen" size="lg">
+                    </fa-icon>
+                </button>
             </div>
         </div>
-            <p>{{aboutMe}}</p>
+            <p>{{portfolioData.sobre_mi}}</p>
     </div>
 </div>

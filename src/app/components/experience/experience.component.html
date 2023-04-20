@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="edit-button-container">
-                    <button (click)="openExperienceEditDialog(i)">
+                    <button *ngIf="this.loginService.isLogged();" (click)="openExperienceEditDialog(i)">
                         <fa-icon [icon]="faPen" size="lg">
                         </fa-icon>
                     </button>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="edit-button-container">
-                    <button (click)="openEducationEditDialog(i)">
+                    <button *ngIf="this.loginService.isLogged();" (click)="openEducationEditDialog(i)">
                         <fa-icon [icon]="faPen" size="lg">
                         </fa-icon>
                     </button>

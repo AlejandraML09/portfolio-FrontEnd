@@ -5,6 +5,7 @@
     width: 100%;
     height: auto;
     padding-top: 30em;
+    
 }
 
 #info-data {
@@ -12,6 +13,10 @@
     flex-direction: row;
     justify-content: space-between;
     margin-left: 2em;
+}
+
+.no-padding {
+    padding-top:0;
 }
 
 .info-data-container {
@@ -38,7 +43,51 @@
     margin-right: 15px;
 }
 
+#info-contact {
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    
+}
+
+
 .edit_pen {
     margin-right:10px;
 }
+
+.profile-image {
+    position: relative;
+    bottom: -70px;
+    border-radius: 100%;
+    border-style: solid;
+    border-color: white;
+    height: 200px;
+    width: 200px;
+    margin-left: 2em;
+    
+}
+
+#info-lugar {
+    margin-right: 10px;
+}
+
+#info-contact-url {
+    margin-right: 5px;
+}
+
+.faLinkedin {
+    color:#0B5ED7;
+}
+
+@media (max-width: 575.98px) { 
+    #info-details {
+        display:none;
+    }
+    .info-buttons-container {
+        display:none;
+    }
+
+}
+
+
 

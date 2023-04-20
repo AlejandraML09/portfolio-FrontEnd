@@ -6,6 +6,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 import { EditHeaderDialogComponent } from '../modals/edit-header-dialog/edit-header-dialog.component';
 import { EditExperienceDialogComponent } from '../modals/edit-experience-dialog/edit-experience-dialog.component';
 import { EditEducationDialogComponent } from '../modals/edit-education-dialog/edit-education-dialog.component';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-experience',
@@ -17,7 +18,7 @@ export class ExperienceComponent {
   
   faPen = faPen
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, public loginService: LoginService) {}
 
   openExperienceEditDialog(index: number) {
     let dataForModal = { 

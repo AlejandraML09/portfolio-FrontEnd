@@ -48,7 +48,7 @@ export class LogInComponent implements OnInit {
           console.log('Login response' + token);
           
           let userObject = JSON.parse(atob(token.split('.')[1])); // Base 64 decode
-          let user: User = new User(userObject.username, userObject.user_id);
+          let user: User = new User(userObject.username, userObject.user_id, userObject.profile_picture);
           // @ts-ignore
           this.loginService.setUserLoggedIn(user, token);
 

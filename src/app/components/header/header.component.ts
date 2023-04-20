@@ -5,6 +5,8 @@ import { PortfolioData, emptyPorfolio } from 'src/app/model/portfoliodata';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { EditHeaderDialogComponent } from '../modals/edit-header-dialog/edit-header-dialog.component';
 import { ActivatedRoute } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -15,8 +17,8 @@ export class HeaderComponent  {
   @Input() portfolioHeader: PortfolioData = emptyPorfolio
 
   faPen = faPen
-
-  constructor(public dialog: MatDialog, public portfolioService:PortfolioService) {}
+  faLinkedin = faLinkedin;
+  constructor(public dialog: MatDialog, public portfolioService:PortfolioService, public loginService: LoginService) {}
 
   openDialog() {
     const dialogRef = this.dialog.open(EditHeaderDialogComponent, { data: this.portfolioHeader});
@@ -28,4 +30,7 @@ export class HeaderComponent  {
       }
     });
   }
+
+  
+
 }

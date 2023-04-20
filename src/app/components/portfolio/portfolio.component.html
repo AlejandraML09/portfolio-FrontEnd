@@ -1,7 +1,11 @@
-<h1>{{this.loginService.getUserLoggedIn()?.username}}</h1>
-<app-header [portfolioHeader]="portfolioData"></app-header>
-<app-about-me [aboutMe]="portfolioData.sobre_mi"></app-about-me>
-<app-experience [portfolioData]="portfolioData" ></app-experience>
-<app-projects [proyectos]="portfolioData.proyectos"></app-projects>
-<app-skill [skills]="portfolioData.skills"></app-skill>
+<div class="portfolio-background">
+    <app-navbar></app-navbar>
+    <div class="portfolio-content">
+        <app-header [portfolioHeader]="portfolioData"></app-header>
+        <app-about-me [portfolioData]="portfolioData"></app-about-me>
+        <app-experience [portfolioData]="portfolioData" ></app-experience>
+        <app-projects [proyectos]="portfolioData.proyectos"></app-projects>
+        <app-skill [skills]="portfolioData.skills"></app-skill>
+    </div>
+</div>
 
