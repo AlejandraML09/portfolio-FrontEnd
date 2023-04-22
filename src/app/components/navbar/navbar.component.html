@@ -1,8 +1,11 @@
 <div class="navbar-container">
   <fa-icon class="navbar-icon" [icon]="faShieldCat" size="xl"></fa-icon>
   <div class="navbar-login-container">
-    <button *ngIf="!this.loginService.isLogged(); else elseBlock" class="btn btn-primary login-button"
-      (click)="iniciarSesion()">Iniciar sesion</button>
+    <div *ngIf="!this.loginService.isLogged(); else elseBlock">
+      <button  class="btn btn-primary login-button"
+      (click)="openLoginDialog()">Iniciar sesion</button>
+    </div>
+     
     <ng-template #elseBlock>
       <img class="logged-image" [src]="this.loginService.getUserLoggedIn()?.profile_picture" alt="">
       <button class="btn btn-primary login-button" (click)="this.loginService.logout()">Cerrar sesion</button>

@@ -1,16 +1,18 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/user';
 import { ApiService } from 'src/app/services/api.service';
 import { LoginService } from 'src/app/services/login.service';
 import Swal from 'sweetalert2';
+import { LoginDialogComponent } from '../modals/login-dialog/login-dialog.component';
 
 @Component({
   selector: 'app-log-in',
@@ -18,6 +20,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./log-in.component.css'],
 })
 export class LogInComponent implements OnInit {
+  @Input() dialogRef!: MatDialogRef<LoginDialogComponent>;
+
   form = new FormGroup({
     username: new FormControl("", Validators.required),
     password: new FormControl("", Validators.required),
@@ -51,7 +55,9 @@ export class LogInComponent implements OnInit {
           let user: User = new User(userObject.username, userObject.user_id, userObject.profile_picture);
           // @ts-ignore
           this.loginService.setUserLoggedIn(user, token);
-
+          console.log("redirecting to portfolio" + user.user_id  )
+          
+          this.dialogRef.close()
           this.router.navigate(['/portfolio/'+ user.user_id ]);
         },
         (errorResponse: HttpErrorResponse) => {

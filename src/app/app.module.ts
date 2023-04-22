@@ -20,6 +20,8 @@ import { EditEducationDialogComponent } from './components/modals/edit-education
 import { SkillComponent } from './components/skill/skill.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { EditAboutMeComponent } from './components/modals/edit-about-me/edit-about-me.component';
+import { LoginDialogComponent } from './components/modals/login-dialog/login-dialog.component';
+
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import { EditAboutMeComponent } from './components/modals/edit-about-me/edit-abo
     SkillComponent,
     NavbarComponent,
     EditAboutMeComponent,
+    LoginDialogComponent,
+
 
   ],
   imports: [
