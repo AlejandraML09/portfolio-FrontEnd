@@ -1,1 +1,36 @@
-<app-log-in [dialogRef]="dialogRef"></app-log-in>
+<div *ngIf="!registerClicked; else elseBlock">
+    
+        <h4 class="login-title">Iniciar Sesión</h4>
+        <form class="m-5 login-container" (ngSubmit)="doLogin()" [formGroup]="form" autocomplete="off" method="post">
+          <div class="mb-3">
+            <label for="username" class="form-label">Usuario:</label>
+            <input type="text" class="form-control" name="username" formControlName="username" id="username">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña:</label>
+            <input type="password" class="form-control" id="password" formControlName="password" name="password" >
+          </div>
+          <p *ngFor="let error of errors">{{error.msg}}</p>
+            <button type="submit" class="btn btn-primary">Iniciar</button>
+              <p class="login-text">¿Todavía no tenes una cuenta?</p>
+              <a (click)="toggleRegister(true)" class="register-text">Registrate</a>
+        </form>
+</div>
+<ng-template #elseBlock>
+    <h4 class="login-title">Crear cuenta</h4>
+    <form class="m-5 login-container" (ngSubmit)="doRegister()" [formGroup]="form" autocomplete="off" method="post">
+      <div class="mb-3">
+        <label for="username" class="form-label">Usuario:</label>
+        <input type="text" class="form-control" name="username" formControlName="username" id="username">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña:</label>
+        <input type="password" class="form-control" id="password" formControlName="password" name="password" >
+      </div>
+      <p *ngFor="let error of errors">{{error.msg}}</p>
+        <button type="submit" class="btn btn-primary">Registrarse</button>
+          <p class="login-text">¿Ya tenes una cuenta?</p>
+          <a (click)="toggleRegister(false)" class="register-text">Iniciar sesión</a>
+    </form>
+</ng-template>
+

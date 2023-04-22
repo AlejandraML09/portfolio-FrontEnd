@@ -8,7 +8,6 @@ import { AboutMeComponent } from './components/about-me/about-me.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProjectsComponent } from './components/projects/projects.component';
-import { LogInComponent } from './components/log-in/log-in.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -31,7 +30,6 @@ import { LoginDialogComponent } from './components/modals/login-dialog/login-dia
     AboutMeComponent,
     ExperienceComponent,
     ProjectsComponent,
-    LogInComponent,
     PortfolioComponent,
     EditHeaderDialogComponent,
     EditExperienceDialogComponent,
