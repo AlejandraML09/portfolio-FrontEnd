@@ -4,7 +4,7 @@
             <div class="experience-edit-container">
                 <h3 class="card-title">Experiencia</h3>
             </div>
-            <div *ngFor="let experience of portfolioData.experiencias;let i = index" class="experience-details-container">
+            <div *ngFor="let experience of portfolioData?.experiencias;let i = index" class="experience-details-container">
                 <div style="display: flex; flex-direction: row;">
                     <a [href]="experience.puesto_url"><img class="experience-details-icon" [src]="experience.puesto_image" alt=""></a>
                     <div>
@@ -16,6 +16,10 @@
                 <div class="edit-button-container">
                     <button *ngIf="this.loginService.isLogged();" (click)="openExperienceEditDialog(i)">
                         <fa-icon [icon]="faPen" size="lg">
+                        </fa-icon>
+                    </button>
+                    <button *ngIf="this.loginService.isLogged();" (click)="openDeleteExperienceSwall(i)">
+                        <fa-icon [icon]="faXmark" size="xl">
                         </fa-icon>
                     </button>
                 </div>

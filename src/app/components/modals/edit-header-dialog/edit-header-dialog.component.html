@@ -10,9 +10,10 @@
         <label for="exampleInputApellido" class="form-label">Apellidos</label>
         <input type="apellido" [(ngModel)]="portfolioData.apellido"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputApellido">
       </div>
-      <div class="mb-3">
+      <div class="mb-3" *ngIf="portfolioData.experiencias.length">
         <label for="exampleInputPuesto" class="form-label">Puesto</label>
-        <input type="puesto" [(ngModel)]="portfolioData.experiencias[0].puesto"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputPuesto">
+        <input type="puesto"
+        [(ngModel)]="portfolioData.experiencias[0].puesto"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputPuesto">
       </div>
       <div class="mb-3">
         <label for="exampleInputContacto" class="form-label">Contacto</label>

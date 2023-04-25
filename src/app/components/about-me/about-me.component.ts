@@ -13,7 +13,23 @@ import { PortfolioData, emptyPorfolio } from 'src/app/model/portfoliodata';
   styleUrls: ['./about-me.component.css'],
 })
 export class AboutMeComponent {
-  @Input() portfolioData: PortfolioData = emptyPorfolio
+  @Input() portfolioData: PortfolioData = {
+    id: 0,
+    nombre: '',
+    apellido: '',
+    fecha_nacimiento: new Date(),
+    nacionalidad: '',
+    email: '',
+    sobre_mi: '',
+    ocupacion: '',
+    banner_image: '',
+    profile_picture: '',
+    contacto: '',
+    educaciones: [],
+    experiencias: [],
+    skills: [],
+    proyectos: []
+  }
 
   faPen = faPen
 

@@ -16,7 +16,11 @@ export class NavbarComponent {
   @Input() user: User = {
     user_id: 0,
     username: '',
-    profile_picture: ''
+    profile_picture: '',
+    banner_image: '',
+    nombre: '',
+    apellido: '',
+    ocupacion: ''
   }
   
   constructor(private router: Router, public loginService: LoginService, public dialog: MatDialog) {}

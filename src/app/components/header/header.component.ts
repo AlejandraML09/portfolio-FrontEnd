@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { faCross, faPen, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { PortfolioData, emptyPorfolio } from 'src/app/model/portfoliodata';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { EditHeaderDialogComponent } from '../modals/edit-header-dialog/edit-header-dialog.component';
@@ -17,6 +17,7 @@ export class HeaderComponent  {
   @Input() portfolioHeader: PortfolioData = emptyPorfolio
 
   faPen = faPen
+
   faLinkedin = faLinkedin;
   constructor(public dialog: MatDialog, public portfolioService:PortfolioService, public loginService: LoginService) {}
 

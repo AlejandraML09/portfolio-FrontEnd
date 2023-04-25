@@ -1,12 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Educacion, Experiencia, PortfolioData, emptyPorfolio } from 'src/app/model/portfoliodata';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { EditHeaderDialogComponent } from '../modals/edit-header-dialog/edit-header-dialog.component';
 import { EditExperienceDialogComponent } from '../modals/edit-experience-dialog/edit-experience-dialog.component';
 import { EditEducationDialogComponent } from '../modals/edit-education-dialog/edit-education-dialog.component';
 import { LoginService } from 'src/app/services/login.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-experience',
@@ -14,11 +15,44 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./experience.component.css']
 })
 export class ExperienceComponent {
-  @Input() portfolioData: PortfolioData = emptyPorfolio
+  @Input() portfolioData: PortfolioData = {
+    id: 0,
+    nombre: '',
+    apellido: '',
+    fecha_nacimiento: new Date(),
+    nacionalidad: '',
+    email: '',
+    sobre_mi: '',
+    ocupacion: '',
+    banner_image: '',
+    profile_picture: '',
+    contacto: '',
+    educaciones: [],
+    experiencias: [],
+    skills: [],
+    proyectos: []
+  }
   
-  faPen = faPen
+  faPen = faPen;
+  faXmark = faXmark;
 
-  constructor(public dialog: MatDialog, public loginService: LoginService) {}
+  constructor(public dialog: MatDialog, public loginService: LoginService, private cdr: ChangeDetectorRef) {}
+
+
+  openDeleteExperienceSwall(index:number) {
+    Swal.fire({
+      title:"Eliminar",
+      text:"¿Desea eliminar la experiencia " + this.portfolioData.experiencias[index].puesto + "?",
+      
+    }).then((result) => {
+      if(result.isConfirmed) {
+        console.log("qu[e pinga es esto", JSON.stringify(this.portfolioData.experiencias))
+        this.portfolioData.experiencias.splice(index,1)
+        console.log("que pinga es esto, pero despu[es", JSON.stringify(this.portfolioData.experiencias) )
+        this.cdr.detectChanges() 
+      }
+    })
+  }
 
   openExperienceEditDialog(index: number) {
     let dataForModal = { 

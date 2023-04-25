@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { PortfolioData, Skills } from 'src/app/model/portfoliodata';
+import { PortfolioData, Skills, emptyPorfolio } from 'src/app/model/portfoliodata';
 
 @Component({
   selector: 'app-skill',
@@ -7,7 +7,7 @@ import { PortfolioData, Skills } from 'src/app/model/portfoliodata';
   styleUrls: ['./skill.component.css']
 })
 export class SkillComponent {
-@Input() skills: Skills[] = []
+@Input() portfolioData: PortfolioData = emptyPorfolio
 
   
 }

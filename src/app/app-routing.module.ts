@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { PortfolioListComponent } from './components/portfolio-list/portfolio-list.component';
 
 const routes: Routes = [
   {path:'portfolio/:id', component:PortfolioComponent},
-  {path:'', redirectTo:'portfolio/3', pathMatch:'full'}
+  {path:'', redirectTo:'portfolio/3', pathMatch:'full'},
+  {path:'portfolio-list', component: PortfolioListComponent}
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faArrowRightFromFile, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import { Project } from 'src/app/model/portfoliodata';
+import { PortfolioData, Project, emptyPorfolio } from 'src/app/model/portfoliodata';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { Project } from 'src/app/model/portfoliodata';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent  {
-  @Input() proyectos: Project[] = []
+  @Input() portfolioData: PortfolioData = emptyPorfolio;
 
   faArrowUpRightFromSquare = faArrowUpRightFromSquare
 

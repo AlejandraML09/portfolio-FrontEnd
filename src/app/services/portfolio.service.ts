@@ -22,4 +22,9 @@ export class PortfolioService {
     return this.http.put<PortfolioData>(`${backendUrl}/persona/${id}`, portfolioData);
   }
 
+  getPortfolioList(): Observable<PortfolioData[]> {
+    return this.http.get<PortfolioData[]>(`${backendUrl}/persona`);
+
+  }
+
 }

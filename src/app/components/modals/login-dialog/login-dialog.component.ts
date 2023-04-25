@@ -42,8 +42,30 @@ export class LoginDialogComponent {
   public errors: Error[] = [];
 
   doRegister() {
-    
+    if (this.form.invalid) {
+      Swal.fire({
+        title: 'Formulario incompleto',
+        text: 'Por favor, complete todos los campos',
+      });
+      return;
+    }
+    this.errors = [];
+    // @ts-ignore
+    this.apiService.register(this.form.get('username')?.value, this.form.get('password')?.value)
+      .subscribe(
+        (response: Response) => {
+          Swal.fire({
+            title: 'Registro exitoso!',
+            text: 'Ya puede iniciar sesión',
+          })
+        },
+        (errorResponse: HttpErrorResponse) => {
+          let error = { msg: 'Ese usuario ya existe' };
+          this.errors.push(error);
+        }
+      );
   }
+
 
   doLogin() {
     if (this.form.invalid) {
@@ -66,7 +88,11 @@ export class LoginDialogComponent {
           let user: User = new User(
             userObject.username,
             userObject.user_id,
-            userObject.profile_picture
+            userObject.profile_picture,
+            userObject.banner_image,
+            userObject.nombre,
+            userObject.apellido,
+            userObject.ocupacion
           );
           // @ts-ignore
           this.loginService.setUserLoggedIn(user, token);

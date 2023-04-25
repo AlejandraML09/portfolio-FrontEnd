@@ -11,7 +11,7 @@
             <input type="password" class="form-control" id="password" formControlName="password" name="password" >
           </div>
           <p *ngFor="let error of errors">{{error.msg}}</p>
-            <button type="submit" class="btn btn-primary">Iniciar</button>
+            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
               <p class="login-text">¿Todavía no tenes una cuenta?</p>
               <a (click)="toggleRegister(true)" class="register-text">Registrate</a>
         </form>

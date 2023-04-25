@@ -11,4 +11,9 @@ export class ApiService {
   login(username: string, password: string) {
     return this.http.post<any>(backendUrl + '/auth/login', { username, password });
   }
+
+  register(username: string, password: string) {
+    return this.http.post<any>(backendUrl + '/auth/register', { username, password });
+  }
+
 }

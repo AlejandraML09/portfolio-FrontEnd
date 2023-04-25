@@ -8,8 +8,6 @@
     background-color: white;
 }
 
-
-
 .btn-primary {
     margin-left: 2em;
 }
@@ -17,8 +15,6 @@
 .info-buttons-container {
     padding-bottom: 1em;
 }
-
-
 
 .edit-button-container {
     display: flex;
@@ -32,8 +28,6 @@
     padding: 2em;
     width:1000px;
 }
-
-
 
 button { 
     border: 0px transparent;

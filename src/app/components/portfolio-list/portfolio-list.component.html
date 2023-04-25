@@ -1,0 +1,57 @@
+<app-navbar></app-navbar>
+<div class="portfolioList-container">
+    <div class="profile_logged_container flex-grow">
+        <div *ngIf="this.loginService.isLogged()" class="profile_logged_card">
+            
+                <img class="profile-banner" [src]="loginService.getUserLoggedIn()?.banner_image" alt="">
+                <div class="banner_content column">
+                    <img class="profile-banner-image" [src]="loginService.getUserLoggedIn()?.profile_picture" alt="">
+                    <p>{{loginService.getUserLoggedIn()?.nombre}} {{loginService.getUserLoggedIn()?.apellido}}</p>
+                </div>
+        </div>
+    </div>
+    <div class="home_content flex-grow2">
+        <div class="profile_picture_container" *ngFor="let portfolio of portfolioList.filter(hasPicture)">
+            <p class="work-title-update">Actualización de empleo de {{portfolio.nombre}} {{portfolio.apellido}}:</p>
+            <div class="work-update">
+                <div class="work-profile">
+                    <a [href]="'/portfolio/'+portfolio.id"><img class="profile-image" [src]="portfolio.profile_picture"
+                            alt=""></a>
+                    <div class="column align_start padding_left">
+                        <p class="profile_text">{{portfolio.nombre}} {{portfolio.apellido}}</p>
+                        <p class="profile_text"> {{portfolio.ocupacion}}</p>
+                    </div>
+                </div>
+                <div class="home_working_on">
+                    <p>¡Felicita a {{portfolio.nombre}} por su nuevo puesto como {{portfolio.ocupacion}}!</p>
+                </div>
+            </div>
+            <div class="profile-like">
+                <div class="profile-logo">
+                    <fa-icon [icon]="faThumbsUp" size="xl">
+                    </fa-icon>
+                    <p>Recomendar</p>
+                </div>
+                <div class="profile-logo">
+                    <fa-icon [icon]="faComments" size="xl">
+                    </fa-icon>
+                    <p>Comentar</p>
+                </div>
+
+            </div>
+            <div class="profile-comment">
+                <a [href]="'/portfolio/'+portfolio.id"><img class="profile-image-comment"
+                        [src]="portfolio.profile_picture" alt=""></a>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Añadir un comentario...">
+                    <div class="input-group-append">
+                        <button class="btn" type="button"> <fa-icon [icon]="faUpload" size="xl">
+                            </fa-icon></button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

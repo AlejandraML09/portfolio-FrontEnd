@@ -1,7 +1,7 @@
-<div class="card_container">
+<div *ngIf="(portfolioData.proyectos.length > 0)" class="card_container">
     <div class="projects-container">
         <h3 class="card-title">Proyectos</h3>
-        <div *ngFor="let project of proyectos" class="projects-details-container">
+        <div *ngFor="let project of portfolioData.proyectos" class="projects-details-container">
             <div>
                 <h4 class="projects-title">{{project.nombre_proyecto}}</h4>
                 <p class="projects-years">{{project.fecha_inicio | date: 'MMM yyyy'}} - {{project.fecha_final | date:
