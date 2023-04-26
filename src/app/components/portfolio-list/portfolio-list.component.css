@@ -1,3 +1,6 @@
+.narbar-index {
+  z-index: 100;
+}
 .home_content {
   padding-bottom: 30px;
   background-color: #f3f2ef;
@@ -47,7 +50,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 32px;
+  border-radius: 10px;
   border: 1px solid #e2e2e2;
   overflow: hidden;
   margin: 10px;
@@ -67,10 +70,10 @@
 }
 
 .work-update {
-  border-radius: 32px;
+  border-radius: 10px;
   border: 1px solid #e2e2e2;
   overflow: hidden;
-  margin: 10px;
+  margin: 6px;
   padding-top: 1em;
   padding-bottom: 1em;
   background-color: white;
@@ -91,6 +94,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -101,6 +105,12 @@
   border-color: white;
   height: 40px;
   width: 40px;
+}
+.profile-image-container {
+  margin-right: 6px;
+}
+.form-control {
+  border-radius: 16px;
 }
 .work-profile {
   display: flex;
@@ -144,7 +154,7 @@ fa-icon {
   justify-self: flex-end;
   justify-content: center;
   background-color: white;
-  border-radius: 32px;
+  border-radius: 10px;
   border: 1px solid #e2e2e2;
   overflow: hidden;
   max-width: 200px;
@@ -153,10 +163,11 @@ fa-icon {
 }
 
 .banner_content {
-  z-index: 2;
-  padding: 2em;
+  z-index: 0;
+  padding-bottom: 2em;
   align-items: center;
   padding-top:100px;
+  width: 100%;
 }
 .profile-banner-image {
     border-radius: 100%;
@@ -165,4 +176,48 @@ fa-icon {
     height: 120px;
     width: 120px;
 
+
+}
+.banner_subtitle {
+  color:rgba(0, 0, 0, 0.6);
+}
+
+.underlined {
+  width:100%;
+  border-bottom: 1px solid #e2e2e2;
+  text-align: center;
+  padding-bottom: 0.5em;
+}
+
+.random-number {
+  color: #0b5ed7;
+  padding-left: 20px;
+}
+
+.profile-contacts {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.profile-contacts-title {
+  color:rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+}
+.bold {
+  font-weight: bold;
+}
+.no-margin {
+  margin: 0px;
+}
+
+
+.banner_argprograma {
+  background-image: url("../../../assets/images/argprograma.jpg");
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-position: center;
+  height: 450px;
+  max-width: 600px;
+  background-clip: content-box;
 }

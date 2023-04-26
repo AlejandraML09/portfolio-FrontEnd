@@ -21,6 +21,12 @@ export class PortfolioListComponent implements OnInit {
   faComments = faComments;
   faUpload = faUpload;
 
+generateRandomInteger(max:number) {
+    return Math.floor(Math.random() * max) + 1;
+}
+
+public randomContactNumber = this.generateRandomInteger(50);
+public randomViewsNumber = this.generateRandomInteger(30);
 
   ngOnInit() {
     this.portfolioService.getPortfolioList().subscribe((result) => {

@@ -7,7 +7,7 @@
     </div>
      
     <ng-template #elseBlock>
-      <img class="logged-image" [src]="this.loginService.getUserLoggedIn()?.profile_picture" alt="">
+      <a [href]="'/portfolio/'+loginService.getUserLoggedIn()?.user_id"><img class="logged-image" [src]="this.loginService.getUserLoggedIn()?.profile_picture" alt=""></a>
       <button class="btn btn-primary login-button" (click)="this.loginService.logout()">Cerrar sesion</button>
     </ng-template>
   </div>

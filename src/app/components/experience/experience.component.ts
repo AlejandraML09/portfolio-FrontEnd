@@ -46,9 +46,7 @@ export class ExperienceComponent {
       
     }).then((result) => {
       if(result.isConfirmed) {
-        console.log("qu[e pinga es esto", JSON.stringify(this.portfolioData.experiencias))
         this.portfolioData.experiencias.splice(index,1)
-        console.log("que pinga es esto, pero despu[es", JSON.stringify(this.portfolioData.experiencias) )
         this.cdr.detectChanges() 
       }
     })
