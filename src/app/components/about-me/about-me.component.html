@@ -3,7 +3,7 @@
         <div id="about-me">
             <h1>Acerca de</h1>
             <div class="edit-button-container">
-                <button *ngIf="this.loginService.isLogged();" (click)="openDialog()">
+                <button *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id" (click)="openDialog()">
                     <fa-icon [icon]="faPen" size="lg">
                     </fa-icon>
                 </button>

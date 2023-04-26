@@ -6,7 +6,7 @@
     </div>
 
     <div class="edit-button-container edit_pen">
-        <button *ngIf="this.loginService.isLogged();" (click)="openDialog()">
+        <button *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioHeader.id" (click)="openDialog()">
             <fa-icon [icon]="faPen" size="lg">
             </fa-icon>
         </button>

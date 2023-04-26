@@ -14,11 +14,11 @@
                     </div>
                 </div>
                 <div class="edit-button-container">
-                    <button *ngIf="this.loginService.isLogged();" (click)="openExperienceEditDialog(i)">
+                    <button *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id" (click)="openExperienceEditDialog(i)">
                         <fa-icon [icon]="faPen" size="lg">
                         </fa-icon>
                     </button>
-                    <button *ngIf="this.loginService.isLogged();" (click)="openDeleteExperienceSwall(i)">
+                    <button *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id" (click)="openDeleteExperienceSwall(i)">
                         <fa-icon [icon]="faXmark" size="xl">
                         </fa-icon>
                     </button>
@@ -35,8 +35,12 @@
                     </div>
                 </div>
                 <div class="edit-button-container">
-                    <button *ngIf="this.loginService.isLogged();" (click)="openEducationEditDialog(i)">
+                    <button *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id" (click)="openEducationEditDialog(i)">
                         <fa-icon [icon]="faPen" size="lg">
+                        </fa-icon>
+                    </button>
+                    <button *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id" (click)="openDeleteEducationSwall(i)">
+                        <fa-icon [icon]="faXmark" size="xl">
                         </fa-icon>
                     </button>
                 </div>

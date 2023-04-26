@@ -52,6 +52,20 @@ export class ExperienceComponent {
     })
   }
 
+  
+  openDeleteEducationSwall(index:number) {
+    Swal.fire({
+      title:"Eliminar",
+      text:"¿Desea eliminar la educación " + this.portfolioData.educaciones[index].escuela + "?",
+      
+    }).then((result) => {
+      if(result.isConfirmed) {
+        this.portfolioData.educaciones.splice(index,1)
+        this.cdr.detectChanges() 
+      }
+    })
+  }
+
   openExperienceEditDialog(index: number) {
     let dataForModal = { 
       data: {
