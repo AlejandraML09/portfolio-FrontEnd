@@ -1,5 +1,9 @@
 <div class="navbar-container">
-  <fa-icon class="navbar-icon" [icon]="faShieldCat" size="xl"></fa-icon>
+  <a class="navbar-home" href="/portfolio-list/">
+    <fa-icon class="navbar-icon" [icon]="faHomeUser" size="xl"></fa-icon>
+    Inicio
+  </a>
+
   <div class="navbar-login-container">
     <div *ngIf="!this.loginService.isLogged(); else elseBlock">
       <button  class="btn btn-primary login-button"

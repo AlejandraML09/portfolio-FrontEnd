@@ -1,30 +1,32 @@
 <app-navbar class="navbar-index"></app-navbar>
 <div class="portfolioList-container">
-    <div class="profile_logged_container flex-grow">
+    <div class="profile_logged_container">
         <div *ngIf="this.loginService.isLogged()" class="profile_logged_card">
-         ><img class="profile-banner" [src]="loginService.getUserLoggedIn()?.banner_image" alt="" >
+            ><img class="profile-banner" [src]="loginService.getUserLoggedIn()?.banner_image" alt="">
             <div class="banner_content column">
-                <a [href]="'/portfolio/'+loginService.getUserLoggedIn()?.user_id"><img class="profile-banner-image" [src]="loginService.getUserLoggedIn()?.profile_picture" alt=""></a>
+                <a [href]="'/portfolio/'+loginService.getUserLoggedIn()?.user_id"><img class="profile-banner-image"
+                        [src]="loginService.getUserLoggedIn()?.profile_picture" alt=""></a>
                 <h4 class="banner_title">{{loginService.getUserLoggedIn()?.nombre}}</h4>
                 <p class="banner_subtitle underlined">{{loginService.getUserLoggedIn()?.ocupacion}}</p>
-    <div class="profile-contacts-container">
-    <div class="profile-contacts">
-        <p class="profile-contacts-title no-margin">Contactos</p>
-        <p class="random-number bold no-margin">{{randomContactNumber}}</p>
-    </div>
-    <p class="bold no-margin">Amplia tu perfil</p>
-    <div class="profile-contacts">
-        <p class="profile-contacts-title">Quién ha visto tu perfil</p>
-        <p class="random-number bold">{{randomViewsNumber}}</p>
-    </div>
-</div>
+                <div class="profile-contacts-container">
+                    <div class="profile-contacts">
+                        <p class="profile-contacts-title no-margin">Contactos</p>
+                        <p class="random-number bold no-margin">{{randomContactNumber}}</p>
+                    </div>
+                    <p class="bold no-margin">Amplia tu perfil</p>
+                    <div class="profile-contacts">
+                        <p class="profile-contacts-title">Quién ha visto tu perfil</p>
+                        <p class="random-number bold">{{randomViewsNumber}}</p>
+                    </div>
+                </div>
             </div>
-            
+
         </div>
     </div>
-    <div class="home_content flex-grow2">
-        <div class="profile_picture_container" *ngFor="let portfolio of portfolioList.filter(hasPicture); let j = index" [style]="'order:' + j">
-                <p class="work-title-update">Actualización de proyecto de {{portfolio.nombre}} {{portfolio.apellido}}:</p>
+    <div class="home_content">
+        <div class="profile_picture_container" *ngFor="let portfolio of portfolioList.filter(hasPicture); let j = index"
+            [style]="'order:' + j">
+            <p class="work-title-update">Actualización de proyecto de {{portfolio.nombre}} {{portfolio.apellido}}:</p>
             <div class="work-update">
                 <div class="work-profile">
                     <a [href]="'/portfolio/'+portfolio.id"><img class="profile-image" [src]="portfolio.profile_picture"
@@ -35,7 +37,8 @@
                     </div>
                 </div>
                 <div class="home_working_on">
-                    <p>¡Me alegra contarles que he obtenido un nuevo certificado: Argentina Programa 4ta Edición. Felicita a {{portfolio.nombre}} por su nuevo logro!</p>
+                    <p>¡Me alegra contarles que he obtenido un nuevo certificado: Argentina Programa 4ta Edición.
+                        Felicita a {{portfolio.nombre}} por su nuevo logro!</p>
                 </div>
                 <div class="banner_argprograma">
                 </div>
@@ -61,7 +64,8 @@
                 </div>
             </div>
         </div>
-        <div class="profile_picture_container" *ngFor="let portfolio of portfolioList.filter(hasPicture); let i = index" [style]="'order:' + i">
+        <div class="profile_picture_container" *ngFor="let portfolio of portfolioList.filter(hasPicture); let i = index"
+            [style]="'order:' + i">
             <p class="work-title-update">Actualización de empleo de {{portfolio.nombre}} {{portfolio.apellido}}:</p>
             <div class="work-update">
                 <div class="work-profile">

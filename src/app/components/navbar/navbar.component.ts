@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { faShieldCat } from '@fortawesome/free-solid-svg-icons';
+import { faHomeUser, faShieldCat } from '@fortawesome/free-solid-svg-icons';
 import { PortfolioData, emptyPorfolio } from 'src/app/model/portfoliodata';
 import { User } from 'src/app/model/user';
 import { LoginService } from 'src/app/services/login.service';
@@ -34,5 +34,6 @@ export class NavbarComponent {
     });
   }
 
-  faShieldCat = faShieldCat
+  faShieldCat = faShieldCat;
+  faHomeUser = faHomeUser;
 }
