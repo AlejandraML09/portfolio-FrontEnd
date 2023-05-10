@@ -14,6 +14,9 @@ export class PortfolioComponent implements OnInit {
   portfolioData: PortfolioData = emptyPorfolio
   id: number = 0;
 
+  
+  isLoading = true;
+
   constructor(
     private dataPortfolio: PortfolioService,
     private route: ActivatedRoute,
@@ -24,6 +27,7 @@ export class PortfolioComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.id = +params['id'];
       this.dataPortfolio.getPortfolio(this.id).subscribe((data) => {
+        this.isLoading = false;
         this.portfolioData = data;
       }, (errorResponse: HttpErrorResponse) => {
         console.log('Error response', errorResponse);

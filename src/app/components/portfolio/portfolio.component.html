@@ -1,11 +1,12 @@
 <div class="portfolio-background">
     <app-navbar></app-navbar>
-    <div class="portfolio-content">
+    <div *ngIf="!this.isLoading" class="portfolio-content">
         <app-header [portfolioHeader]="portfolioData"></app-header>
         <app-about-me [portfolioData]="portfolioData"></app-about-me>
         <app-experience [portfolioData]="portfolioData" ></app-experience>
         <app-projects [portfolioData]="portfolioData"></app-projects>
         <app-skill [portfolioData]="portfolioData"></app-skill>
     </div>
+    <app-spinner class="spinner" *ngIf="this.isLoading"></app-spinner>
 </div>
 
