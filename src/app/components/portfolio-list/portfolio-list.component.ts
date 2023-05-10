@@ -25,11 +25,16 @@ generateRandomInteger(max:number) {
     return Math.floor(Math.random() * max) + 1;
 }
 
+isLoading = true;
+
+
 public randomContactNumber = this.generateRandomInteger(50);
 public randomViewsNumber = this.generateRandomInteger(30);
 
   ngOnInit() {
     this.portfolioService.getPortfolioList().subscribe((result) => {
+      console.log("info del loading", result)
+      this.isLoading = false;
       this.portfolioList = result;
     }, (error) => {})
 

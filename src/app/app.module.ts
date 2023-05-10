@@ -21,6 +21,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { EditAboutMeComponent } from './components/modals/edit-about-me/edit-about-me.component';
 import { LoginDialogComponent } from './components/modals/login-dialog/login-dialog.component';
 import { PortfolioListComponent } from './components/portfolio-list/portfolio-list.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 
 
@@ -40,6 +41,7 @@ import { PortfolioListComponent } from './components/portfolio-list/portfolio-li
     EditAboutMeComponent,
     LoginDialogComponent,
     PortfolioListComponent,
+    SpinnerComponent,
 
 
   ],

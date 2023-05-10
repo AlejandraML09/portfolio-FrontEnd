@@ -6,7 +6,7 @@ import { PortfolioListComponent } from './components/portfolio-list/portfolio-li
 
 const routes: Routes = [
   {path:'portfolio/:id', component:PortfolioComponent},
-  {path:'', redirectTo:'portfolio/13', pathMatch:'full'},
+  {path:'', redirectTo:'portfolio/3', pathMatch:'full'},
   {path:'portfolio-list', component: PortfolioListComponent}
 ];
 

@@ -1,5 +1,5 @@
 <app-navbar class="navbar-index"></app-navbar>
-<div class="portfolioList-container">
+<div *ngIf="!this.isLoading" class="portfolioList-container">
     <div class="profile_logged_container">
         <div *ngIf="this.loginService.isLogged()" class="profile_logged_card">
             ><img class="profile-banner" [src]="loginService.getUserLoggedIn()?.banner_image" alt="">
@@ -23,7 +23,7 @@
 
         </div>
     </div>
-    <div class="home_content">
+    <div  class="home_content">
         <div class="profile_picture_container" *ngFor="let portfolio of portfolioList.filter(hasPicture); let j = index"
             [style]="'order:' + j">
             <p class="work-title-update">Actualización de proyecto de {{portfolio.nombre}} {{portfolio.apellido}}:</p>
@@ -105,4 +105,6 @@
         </div>
 
     </div>
+ 
 </div>
+<app-spinner class="spinner" *ngIf="this.isLoading"></app-spinner>
