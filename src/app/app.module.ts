@@ -24,6 +24,7 @@ import { PortfolioListComponent } from './components/portfolio-list/portfolio-li
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { AddExperienceDialogComponent } from './components/modals/add-experience-dialog/add-experience-dialog.component';
 import { AddEducationDialogComponent } from './components/modals/add-education-dialog/add-education-dialog.component';
+import { AddSkillDialogComponent } from './components/modals/add-skill-dialog/add-skill-dialog.component';
 
 
 
@@ -46,6 +47,7 @@ import { AddEducationDialogComponent } from './components/modals/add-education-d
     SpinnerComponent,
     AddExperienceDialogComponent,
     AddEducationDialogComponent,
+    AddSkillDialogComponent,
 
 
   ],

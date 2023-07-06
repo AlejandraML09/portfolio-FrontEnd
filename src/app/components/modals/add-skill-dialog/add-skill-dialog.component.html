@@ -1,0 +1,21 @@
+<div class="popup-container">
+    <h2 mat-dialog-title>Añadir nuevos skills:</h2>
+    <mat-dialog-content class="mat-typography">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" #formRef>
+        <div class="mb-3">
+          <label for="exampleInputPuesto" class="form-label">Lenguaje de Programación:</label>
+          <input type="text" name="lenguaje" formControlName="lenguaje"  class="form-control" id="exampleInputPuesto">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputNombreEmpresa" class="form-label">Porcentaje de Conocimiento:</label>
+          <input type="text"
+          name="porcentaje_de_conocimiento" formControlName="porcentaje_de_conocimiento" class="form-control" id="exampleInputNombreEmpresa">
+        </div>
+      </form>
+    
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button  class="btn btn-primary" mat-button mat-dialog-close>Cancel</button>
+      <button  class="btn btn-primary"  mat-button cdkFocusInitial type="submit"  [disabled]="form.invalid"  (click)="onSubmit()" form="formRef">Guardar</button>
+    </mat-dialog-actions>
+  </div>

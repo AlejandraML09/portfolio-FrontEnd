@@ -69,6 +69,12 @@ export type Skills = {
   porcentaje_de_conocimiento: string;
 }
 
+export let emptySkill: Skills = {
+  id: 0,
+  lenguaje: "",
+  porcentaje_de_conocimiento: ""
+}
+
 export type Project = {
   id: number;
   nombre_proyecto: string;
