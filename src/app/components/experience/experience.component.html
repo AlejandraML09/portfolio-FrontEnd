@@ -30,7 +30,15 @@
                     </button>
                 </div>
             </div>
-            <h3 class="card-title">Educación</h3>
+            <div class="addExpOrEduButton">
+                <h3 class="card-title">Educación</h3>
+                <div class="add-button-container">
+                    <button *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id" (click)="openAddEducationDialog()">
+                        <fa-icon [icon]="faPlus" size="xl">
+                        </fa-icon>
+                    </button>
+                </div>
+            </div>
             <div *ngFor="let education of portfolioData.educaciones;let i = index" class="experience-details-container">
                 <div style="display: flex; flex-direction: row;">
                     <a [href]="education.escuela_url"><img class="experience-details-icon" [src]="education.escuela_image" alt=""></a>

@@ -28,6 +28,18 @@ export type Educacion = {
   escuela_url: string;
 };
 
+export let emptyEducacion: Educacion = {
+  id: 0,
+  persona: "",
+  escuela: "",
+  titulo: "",
+  puntaje: 0,
+  inicio: new Date(),
+  fin: new Date(),
+  escuela_image: "",
+  escuela_url: ""
+}
+
 export type Experiencia = {
   id: number;
   compania: string;

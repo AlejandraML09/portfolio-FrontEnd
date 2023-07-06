@@ -9,6 +9,7 @@ import { EditEducationDialogComponent } from '../modals/edit-education-dialog/ed
 import { LoginService } from 'src/app/services/login.service';
 import Swal from 'sweetalert2';
 import { AddExperienceDialogComponent } from '../modals/add-experience-dialog/add-experience-dialog.component';
+import { AddEducationDialogComponent } from '../modals/add-education-dialog/add-education-dialog.component';
 
 @Component({
   selector: 'app-experience',
@@ -106,7 +107,16 @@ export class ExperienceComponent {
       const id = this.loginService.getUserLoggedIn()!.user_id
       console.log("id", id)
       this.portfolioService.addExperience(id, experiencia).subscribe(postResult => console.log('esto es el postResult', postResult))
+    });
+  }
 
+  openAddEducationDialog() {
+    const dialogRef = this.dialog.open(AddEducationDialogComponent);
+    dialogRef.afterClosed().subscribe(educacion => {
+      console.log("guardando educacion", JSON.stringify(educacion))
+      const id = this.loginService.getUserLoggedIn()!.user_id
+      console.log("id", id)
+      this.portfolioService.addEducacion(id, educacion).subscribe(postResult => console.log('esto es el postResult', postResult))
     });
 
   }
