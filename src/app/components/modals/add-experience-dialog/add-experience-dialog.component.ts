@@ -2,6 +2,8 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Experiencia, PortfolioData, emptyExperiencia, emptyPorfolio } from 'src/app/model/portfoliodata';
 import {faPlus} from '@fortawesome/free-solid-svg-icons';
+import { PortfolioService } from 'src/app/services/portfolio.service';
+import { LoginService } from 'src/app/services/login.service';
 
 
 @Component({
@@ -11,10 +13,12 @@ import {faPlus} from '@fortawesome/free-solid-svg-icons';
 })
 export class AddExperienceDialogComponent {
   public experiencia: Experiencia = emptyExperiencia
-  constructor() {
+  
+  constructor(public portfolioService: PortfolioService, public loginService: LoginService) {
 
   }
-  
+
+
   faPlus = faPlus;
 
 

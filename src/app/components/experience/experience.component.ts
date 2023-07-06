@@ -38,7 +38,7 @@ export class ExperienceComponent {
   faXmark = faXmark;
   faPlus = faPlus;
 
-  constructor(public dialog: MatDialog, public loginService: LoginService, private cdr: ChangeDetectorRef) {}
+  constructor(public dialog: MatDialog, public loginService: LoginService, private cdr: ChangeDetectorRef, public portfolioService:PortfolioService) {}
 
 
   openDeleteExperienceSwall(index:number) {
@@ -48,6 +48,8 @@ export class ExperienceComponent {
       
     }).then((result) => {
       if(result.isConfirmed) {
+        const userId = this.loginService.getUserLoggedIn()!.user_id
+        this.portfolioService.deleteExperience(userId, this.portfolioData.experiencias[index].id).subscribe(deleteResult => console.log('esto es el deleteResult', deleteResult))
         this.portfolioData.experiencias.splice(index,1)
         this.cdr.detectChanges() 
       }
@@ -62,6 +64,7 @@ export class ExperienceComponent {
       
     }).then((result) => {
       if(result.isConfirmed) {
+        const userId = this.loginService.getUserLoggedIn()!.user_id
         this.portfolioData.educaciones.splice(index,1)
         this.cdr.detectChanges() 
       }
@@ -97,10 +100,13 @@ export class ExperienceComponent {
   }
 
   openAddExperienceDialog () {
-
     const dialogRef = this.dialog.open(AddExperienceDialogComponent);
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+    dialogRef.afterClosed().subscribe(experiencia => {
+      console.log("guardando experiencia", JSON.stringify(experiencia))
+      const id = this.loginService.getUserLoggedIn()!.user_id
+      console.log("id", id)
+      this.portfolioService.addExperience(id, experiencia).subscribe(postResult => console.log('esto es el postResult', postResult))
+
     });
 
   }
