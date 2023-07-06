@@ -22,6 +22,7 @@ import { EditAboutMeComponent } from './components/modals/edit-about-me/edit-abo
 import { LoginDialogComponent } from './components/modals/login-dialog/login-dialog.component';
 import { PortfolioListComponent } from './components/portfolio-list/portfolio-list.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { AddExperienceDialogComponent } from './components/modals/add-experience-dialog/add-experience-dialog.component';
 
 
 
@@ -42,6 +43,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     LoginDialogComponent,
     PortfolioListComponent,
     SpinnerComponent,
+    AddExperienceDialogComponent,
 
 
   ],

@@ -1,0 +1,33 @@
+<div class="popup-container">
+    <h2 mat-dialog-title>Experiencia</h2>
+    <mat-dialog-content class="mat-typography">
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputPuesto" class="form-label">Puesto</label>
+          <input type="puesto" [(ngModel)]="experiencia.puesto" class="form-control" id="exampleInputPuesto">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputNombreEmpresa" class="form-label">Nombre de la empresa</label>
+          <input type="nombre_empresa" [(ngModel)]="experiencia.compania"  class="form-control" id="exampleInputNombreEmpresa">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputJornada" class="form-label">Tipo de Empleo</label>
+          <input type="jornada" [(ngModel)]="experiencia.jornada"
+           class="form-control" id="exampleInputJornada">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputInicio" class="form-label">Fecha de inicio:</label>
+          <input type="ubicacion" [(ngModel)]="experiencia.inicio"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputInicio">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputFin" class="form-label">Fecha de finalización:</label>
+            <input type="fin" [(ngModel)]="experiencia.fin" class="form-control" id="exampleInputFin">
+          </div>
+      </form>
+    
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button  class="btn btn-primary" mat-button mat-dialog-close>Cancel</button>
+      <button  class="btn btn-primary"  mat-button cdkFocusInitial>Guardar</button>
+    </mat-dialog-actions>
+  </div>

@@ -40,6 +40,17 @@ export type Experiencia = {
 
 }
 
+export let emptyExperiencia: Experiencia = {
+  id: 0,
+  compania: "",
+  puesto: "",
+  jornada: "",
+  inicio: new Date(),
+  fin: new Date(),
+  puesto_image: "",
+  puesto_url: ""
+}
+
 export type Skills = {
   id: number;
   lenguaje: string;

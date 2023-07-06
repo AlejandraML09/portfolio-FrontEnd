@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { faPen, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faXmark, faPlus} from '@fortawesome/free-solid-svg-icons';
 import { Educacion, Experiencia, PortfolioData, emptyPorfolio } from 'src/app/model/portfoliodata';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { EditHeaderDialogComponent } from '../modals/edit-header-dialog/edit-header-dialog.component';
@@ -8,6 +8,7 @@ import { EditExperienceDialogComponent } from '../modals/edit-experience-dialog/
 import { EditEducationDialogComponent } from '../modals/edit-education-dialog/edit-education-dialog.component';
 import { LoginService } from 'src/app/services/login.service';
 import Swal from 'sweetalert2';
+import { AddExperienceDialogComponent } from '../modals/add-experience-dialog/add-experience-dialog.component';
 
 @Component({
   selector: 'app-experience',
@@ -35,6 +36,7 @@ export class ExperienceComponent {
   
   faPen = faPen;
   faXmark = faXmark;
+  faPlus = faPlus;
 
   constructor(public dialog: MatDialog, public loginService: LoginService, private cdr: ChangeDetectorRef) {}
 
@@ -94,5 +96,13 @@ export class ExperienceComponent {
     });
   }
 
+  openAddExperienceDialog () {
+
+    const dialogRef = this.dialog.open(AddExperienceDialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+
+  }
 
 }

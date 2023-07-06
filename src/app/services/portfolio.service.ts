@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PortfolioData } from '../model/portfoliodata';
+import { Experiencia, PortfolioData } from '../model/portfoliodata';
 import { backendUrl } from 'src/globals';
 
 @Injectable({
@@ -25,6 +25,10 @@ export class PortfolioService {
   getPortfolioList(): Observable<PortfolioData[]> {
     return this.http.get<PortfolioData[]>(`${backendUrl}/persona`);
 
+  }
+
+  addExperience(id:number, experiencia:Experiencia):Observable<any> {
+    return this.http.post<any>(backendUrl + `/persona/${id}/experiencia`, { experiencia })
   }
 
 }
