@@ -32,6 +32,11 @@ export class PortfolioService {
 
   }
 
+  deleteEducacion (userId:number, educacionId:number) {
+    return this.http.delete(`${backendUrl}/persona/${userId}/educacion/${educacionId}`)
+
+  }
+
   addExperience(id:number, experiencia:Experiencia):Observable<any> {
     return this.http.post<any>(backendUrl + `/persona/${id}/experiencia`, { experiencia })
   }

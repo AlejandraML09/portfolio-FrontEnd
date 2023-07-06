@@ -66,6 +66,7 @@ export class ExperienceComponent {
     }).then((result) => {
       if(result.isConfirmed) {
         const userId = this.loginService.getUserLoggedIn()!.user_id
+        this.portfolioService.deleteEducacion(userId, this.portfolioData.educaciones[index].id).subscribe(deleteResult => console.log('esto es el deleteResult', deleteResult))
         this.portfolioData.educaciones.splice(index,1)
         this.cdr.detectChanges() 
       }
