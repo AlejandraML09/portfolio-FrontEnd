@@ -35,10 +35,7 @@
 }
 
 .addExpOrEduButton {
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
-
 }
 
 .project-edit-container {

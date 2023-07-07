@@ -37,3 +37,12 @@ button {
 html, body { height: 100%; margin: 0; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.no-margin {
+    margin: 0px;
+  }
+
+  .addExpOrEduButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
