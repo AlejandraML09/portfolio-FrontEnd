@@ -99,10 +99,13 @@ export class ExperienceComponent {
         educationIndex: index,
       }
     }
-
     const dialogRef = this.dialog.open(EditEducationDialogComponent, dataForModal);
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
+      if (result) {
+        const id = this.loginService.getUserLoggedIn()!.user_id
+        this.portfolioService.editPortfolio(id, result).subscribe(postResult => console.log('esto es el postResult', postResult))
+      }
     });
   }
 

@@ -4,27 +4,32 @@
           <form>
             <div class="mb-3">
               <label for="exampleInputPuesto" class="form-label">Puesto</label>
-              <input type="puesto" [(ngModel)]="data.portfolioData.experiencias[data.experienceIndex].puesto"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputPuesto">
+              <input type="puesto" [(ngModel)]="portfolioDataCopy.experiencias[data.experienceIndex].puesto"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputPuesto">
             </div>
             <div class="mb-3">
               <label for="exampleInputNombreEmpresa" class="form-label">Nombre de la empresa</label>
-              <input type="nombre_empresa" [(ngModel)]="data.portfolioData.experiencias[data.experienceIndex].compania"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputNombreEmpresa">
+              <input type="nombre_empresa" [(ngModel)]="portfolioDataCopy.experiencias[data.experienceIndex].compania"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputNombreEmpresa">
             </div>
             <div class="mb-3">
               <label for="exampleInputJornada" class="form-label">Tipo de Empleo</label>
-              <input type="jornada" [(ngModel)]="data.portfolioData.experiencias[data.experienceIndex].jornada"  [ngModelOptions]="{standalone: true}"
+              <input type="jornada" [(ngModel)]="portfolioDataCopy.experiencias[data.experienceIndex].jornada"  [ngModelOptions]="{standalone: true}"
                class="form-control" id="exampleInputJornada">
             </div>
             <div class="mb-3">
               <label for="exampleInputInicio" class="form-label">Fecha de inicio:</label>
-              <input type="ubicacion" [(ngModel)]="data.portfolioData.experiencias[data.experienceIndex].inicio"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputInicio">
+              <input type="ubicacion" [(ngModel)]="portfolioDataCopy.experiencias[data.experienceIndex].inicio"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputInicio">
             </div>
             <div class="mb-3">
                 <label for="exampleInputFin" class="form-label">Fecha de finalización:</label>
-                <input type="fin" [(ngModel)]="data.portfolioData.experiencias[data.experienceIndex].fin" 
+                <input type="fin" [(ngModel)]="portfolioDataCopy.experiencias[data.experienceIndex].fin" 
                 [ngModelOptions]="{standalone: true}"
                 class="form-control" id="exampleInputFin">
               </div>
+              <div class="mb-3">
+                <label for="exampleInputFin" class="form-label">Subí la imagen del logo de la empresa:</label>
+                <input type="text" [(ngModel)]="portfolioDataCopy.experiencias[data.experienceIndex].puesto_image" [ngModelOptions]="{standalone: true}"class="form-control" id="exampleInputFin">
+              </div>
+              <img class="image-preview" [src]="portfolioDataCopy.experiencias[data.experienceIndex].puesto_image"/>
           </form>
         
         </mat-dialog-content>

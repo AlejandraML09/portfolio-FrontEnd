@@ -16,8 +16,15 @@
         </div>
         <div class="mb-3">
             <label for="exampleInputFin" class="form-label">Fecha de finalización:</label>
-            <input type="fin" [(ngModel)]="data.portfolioData.educaciones[data.educationIndex].fin" class="form-control" id="exampleInputFin">
+            <input type="fin" [(ngModel)]="data.portfolioData.educaciones[data.educationIndex].fin" 
+            [ngModelOptions]="{standalone: true}"
+            class="form-control" id="exampleInputFin">
           </div>
+          <div class="mb-3">
+            <label for="exampleInputFin" class="form-label">Subí la imagen del logo de la empresa/institución:</label>
+            <input type="text"[(ngModel)]="data.portfolioData.educaciones[data.educationIndex].escuela_image" [ngModelOptions]="{standalone: true}"class="form-control" id="exampleInputFin">
+          </div>
+          <img class="image-preview" [src]="data.portfolioData.educaciones[data.educationIndex].escuela_image"/>
       </form>
     
     </mat-dialog-content>

@@ -23,6 +23,11 @@
             <label for="exampleInputFin" class="form-label">Fecha de finalización:</label>
             <input type="fin" [(ngModel)]="experiencia.fin" [ngModelOptions]="{standalone: true}"class="form-control" id="exampleInputFin">
           </div>
+          <div class="mb-3">
+            <label for="exampleInputFin" class="form-label">Subí la imagen del logo de la empresa:</label>
+            <input type="text" [(ngModel)]="experiencia.puesto_image" [ngModelOptions]="{standalone: true}"class="form-control" id="exampleInputFin">
+          </div>
+          <img class="image-preview" [src]="experiencia.puesto_image"/>
       </form>
     
     </mat-dialog-content>

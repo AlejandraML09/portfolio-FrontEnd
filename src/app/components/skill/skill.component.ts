@@ -37,10 +37,6 @@ openDeleteSkillSwall(index:number) {
 openAddSkillDialog() {
   const dialogRef = this.dialog.open(AddSkillDialogComponent);
   dialogRef.afterClosed().subscribe(skill => {
-    // console.log("guardando skill", JSON.stringify(skill))
-    // const id = this.loginService.getUserLoggedIn()!.user_id
-    // console.log("id", id)
-    // this.portfolioService.addSkill(id, skill).subscribe(postResult => console.log('esto es el postResult', postResult))
   });
 
 }
@@ -56,6 +52,10 @@ openSkillEditDialog(index: number) {
   const dialogRef = this.dialog.open(EditSkillsDialogComponent, dataForModal);
   dialogRef.afterClosed().subscribe(result => {
     console.log(`Dialog result: ${result}`);
+    if (result) {
+      const id = this.loginService.getUserLoggedIn()!.user_id
+      this.portfolioService.editPortfolio(id, result).subscribe(postResult => console.log('esto es el postResult', postResult))
+    }
   });
 }
 

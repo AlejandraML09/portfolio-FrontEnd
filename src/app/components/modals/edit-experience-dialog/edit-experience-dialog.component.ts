@@ -10,11 +10,12 @@ import { Educacion, Experiencia, PortfolioData } from 'src/app/model/portfolioda
   styleUrls: ['./edit-experience-dialog.component.css']
 })
 export class EditExperienceDialogComponent {
-
+public portfolioDataCopy: PortfolioData
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: {portfolioData: PortfolioData, experienceIndex: number}) {
     console.log(data)
     console.log(data.portfolioData.experiencias[data.experienceIndex])
+    this.portfolioDataCopy = data.portfolioData
   }
   
   faPen = faPen
