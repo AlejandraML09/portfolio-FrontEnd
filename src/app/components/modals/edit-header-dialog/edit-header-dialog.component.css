@@ -1,0 +1,8 @@
+.image-preview {
+    border-radius: 100%;
+    border-style: solid;
+    border-color: white;
+    height: 200px;
+    width: 200px;
+    margin-left: 2em;
+}

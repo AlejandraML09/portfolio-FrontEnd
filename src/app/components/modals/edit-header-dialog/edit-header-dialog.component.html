@@ -24,6 +24,11 @@
         <label for="exampleInputUbicacion" class="form-label">Ubicación</label>
         <input type="ubicacion" [(ngModel)]="portfolioData.nacionalidad"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputUbicacion">
       </div>
+      <div class="mb-3">
+        <label for="exampleInputFin" class="form-label">Foto de perfil:</label>
+        <input type="text" [(ngModel)]="portfolioData.profile_picture" [ngModelOptions]="{standalone: true}"class="form-control" id="exampleInputFin">
+      </div>
+      <img class="image-preview" [src]="portfolioData.profile_picture"/>
     </form>
   
   </mat-dialog-content>

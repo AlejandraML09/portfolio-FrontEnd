@@ -1,0 +1,33 @@
+<div class="popup-container">
+    <h2 mat-dialog-title>Proyecto</h2>
+    <mat-dialog-content class="mat-typography">
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputNombreProyecto" class="form-label">Nombre del Proyecto</label>
+          <input type="text" [(ngModel)]="proyecto.nombre_proyecto" [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputNombreProyecto">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputDescripcion" class="form-label">Descripción</label>
+          <input type="Descripcion" [(ngModel)]="proyecto.descripcion" [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputDescripcion">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputFInicio" class="form-label">Fecha de Inicio</label>
+          <input type="fInicio" [(ngModel)]="proyecto.fecha_inicio" [ngModelOptions]="{standalone: true}"
+           class="form-control" id="exampleInputFInicio">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputFFin" class="form-label">Fecha de Fin:</label>
+          <input type="ffin" [(ngModel)]="proyecto.fecha_final"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputFFin">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputLink" class="form-label">Link al Proyecto:</label>
+            <input type="link" [(ngModel)]="proyecto.url" [ngModelOptions]="{standalone: true}"class="form-control" id="exampleInputLink">
+          </div>
+      </form>
+    
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button  class="btn btn-primary" mat-button mat-dialog-close>Cancel</button>
+      <button  class="btn btn-primary"  mat-button cdkFocusInitial [mat-dialog-close]="proyecto">Guardar</button>
+    </mat-dialog-actions>
+  </div>

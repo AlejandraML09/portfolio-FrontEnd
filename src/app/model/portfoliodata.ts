@@ -84,6 +84,15 @@ export type Project = {
   url: string;
 }
 
+export let emptyProject: Project = {
+  id: 0,
+  nombre_proyecto: "",
+  descripcion: "",
+  fecha_inicio: new Date(),
+  fecha_final: new Date(),
+  url: ""
+}
+
 export let emptyPorfolio: PortfolioData = {
   id: 0,
   nombre: '',

@@ -26,6 +26,7 @@ import { AddExperienceDialogComponent } from './components/modals/add-experience
 import { AddEducationDialogComponent } from './components/modals/add-education-dialog/add-education-dialog.component';
 import { AddSkillDialogComponent } from './components/modals/add-skill-dialog/add-skill-dialog.component';
 import { EditSkillsDialogComponent } from './components/modals/edit-skills-dialog/edit-skills-dialog.component';
+import { AddProjectDialogComponent } from './components/modals/add-project-dialog/add-project-dialog.component';
 
 
 
@@ -50,6 +51,7 @@ import { EditSkillsDialogComponent } from './components/modals/edit-skills-dialo
     AddEducationDialogComponent,
     AddSkillDialogComponent,
     EditSkillsDialogComponent,
+    AddProjectDialogComponent,
 
 
   ],

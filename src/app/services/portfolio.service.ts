@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Educacion, Experiencia, PortfolioData, Skills } from '../model/portfoliodata';
+import { Educacion, Experiencia, PortfolioData, Project, Skills } from '../model/portfoliodata';
 import { backendUrl } from 'src/globals';
 
 @Injectable({
@@ -42,6 +42,11 @@ export class PortfolioService {
 
   }
 
+  deleteProject (userId:number, proyectoId:number) {
+    return this.http.delete(`${backendUrl}/persona/${userId}/proyecto/${proyectoId}`)
+
+  }
+
 
   addExperience(id:number, experiencia:Experiencia):Observable<any> {
     return this.http.post<any>(backendUrl + `/persona/${id}/experiencia`,  experiencia )
@@ -53,5 +58,8 @@ export class PortfolioService {
 
   addSkill (id:number, skill:Skills):Observable<any> {
     return this.http.post<any>(backendUrl + `/persona/${id}/skill`, skill)
+  }
+  addProyecto (id:number, proyecto:Project):Observable<any> {
+    return this.http.post<any>(backendUrl + `/persona/${id}/proyecto`, proyecto)
   }
 }
