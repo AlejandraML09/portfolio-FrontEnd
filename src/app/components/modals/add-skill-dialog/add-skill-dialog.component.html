@@ -16,6 +16,6 @@
     </mat-dialog-content>
     <mat-dialog-actions align="end">
       <button  class="btn btn-primary" mat-button mat-dialog-close>Cancel</button>
-      <button  class="btn btn-primary"  mat-button cdkFocusInitial type="submit"  [disabled]="form.invalid"  (click)="onSubmit()" form="formRef">Guardar</button>
+      <button class="btn btn-primary" mat-button cdkFocusInitial [mat-dialog-close]="skill">Guardar</button>
     </mat-dialog-actions>
   </div>
