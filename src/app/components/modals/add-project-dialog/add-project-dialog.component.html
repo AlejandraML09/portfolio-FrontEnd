@@ -14,16 +14,21 @@
             [ngModelOptions]="{standalone: true}"></textarea>
         </div>
       </div>
-      <div class="mb-3">
-        <label for="inputFInicio" class="form-label">Fecha de Inicio</label>
-        <input type="fInicio" [(ngModel)]="proyecto.fecha_inicio" [ngModelOptions]="{standalone: true}"
-          class="form-control" id="inputFInicio">
-      </div>
-      <div class="mb-3">
-        <label for="inputFFin" class="form-label">Fecha de Fin:</label>
-        <input type="ffin" [(ngModel)]="proyecto.fecha_final" [ngModelOptions]="{standalone: true}" class="form-control"
-          id="inputFFin">
-      </div>
+      <mat-form-field>
+        <mat-label>Fecha de Inicio:</mat-label>
+        <input matInput [matDatepicker]="pickerStart"  [(ngModel)]="proyecto.fecha_inicio" [ngModelOptions]="{standalone: true}">
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="pickerStart"></mat-datepicker-toggle>
+        <mat-datepicker #pickerStart></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Fecha de Finalización:</mat-label>
+        <input matInput [matDatepicker]="pickerEnd"  [(ngModel)]="proyecto.fecha_final" [ngModelOptions]="{standalone: true}">
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+        <mat-datepicker #pickerEnd></mat-datepicker>
+      </mat-form-field>
+
       <div class="mb-3">
         <label for="inputLink" class="form-label">Link al Proyecto:</label>
         <input type="link" [(ngModel)]="proyecto.url" [ngModelOptions]="{standalone: true}" class="form-control"

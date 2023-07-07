@@ -113,9 +113,12 @@ export class ExperienceComponent {
     const dialogRef = this.dialog.open(AddExperienceDialogComponent);
     dialogRef.afterClosed().subscribe(experiencia => {
       console.log("guardando experiencia", JSON.stringify(experiencia))
-      const id = this.loginService.getUserLoggedIn()!.user_id
-      console.log("id", id)
-      this.portfolioService.addExperience(id, experiencia).subscribe(postResult => console.log('esto es el postResult', postResult))
+      if(experiencia) {
+        const id = this.loginService.getUserLoggedIn()!.user_id
+        console.log("id", id)
+        this.portfolioService.addExperience(id, experiencia).subscribe(postResult => console.log('esto es el postResult', postResult))
+        this.portfolioData.experiencias.push(experiencia)
+      }
     });
   }
 
@@ -123,9 +126,13 @@ export class ExperienceComponent {
     const dialogRef = this.dialog.open(AddEducationDialogComponent);
     dialogRef.afterClosed().subscribe(educacion => {
       console.log("guardando educacion", JSON.stringify(educacion))
-      const id = this.loginService.getUserLoggedIn()!.user_id
-      console.log("id", id)
-      this.portfolioService.addEducacion(id, educacion).subscribe(postResult => console.log('esto es el postResult', postResult))
+      if(educacion) {
+        const id = this.loginService.getUserLoggedIn()!.user_id
+        console.log("id", id)
+        this.portfolioService.addEducacion(id, educacion).subscribe(postResult => console.log('esto es el postResult', postResult))
+        this.portfolioData.educaciones.push(educacion) 
+      }
+     
     });
 
   }

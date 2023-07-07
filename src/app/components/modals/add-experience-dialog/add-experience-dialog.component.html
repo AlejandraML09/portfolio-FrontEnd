@@ -17,16 +17,20 @@
         <input type="jornada" [(ngModel)]="experiencia.jornada" [ngModelOptions]="{standalone: true}"
           class="form-control" id="inputJornada">
       </div>
-      <div class="mb-3">
-        <label for="inputInicio" class="form-label">Fecha de inicio:</label>
-        <input type="ubicacion" [(ngModel)]="experiencia.inicio" [ngModelOptions]="{standalone: true}"
-          class="form-control" id="inputInicio">
-      </div>
-      <div class="mb-3">
-        <label for="inputFin" class="form-label">Fecha de finalización:</label>
-        <input type="fin" [(ngModel)]="experiencia.fin" [ngModelOptions]="{standalone: true}" class="form-control"
-          id="inputFin">
-      </div>
+      <mat-form-field>
+        <mat-label>Fecha de Inicio:</mat-label>
+        <input matInput [matDatepicker]="pickerStart"  [(ngModel)]="experiencia.inicio" [ngModelOptions]="{standalone: true}">
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="pickerStart"></mat-datepicker-toggle>
+        <mat-datepicker #pickerStart></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Fecha de Finalización:</mat-label>
+        <input matInput [matDatepicker]="pickerEnd" [(ngModel)]="experiencia.fin" [ngModelOptions]="{standalone: true}">
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+        <mat-datepicker #pickerEnd></mat-datepicker>
+      </mat-form-field>
       <div class="mb-3">
         <label for="inputImagen" class="form-label">Subí la imagen del logo de la empresa/institución:</label>
         <input type="text" [(ngModel)]="experiencia.puesto_image" [ngModelOptions]="{standalone: true}"

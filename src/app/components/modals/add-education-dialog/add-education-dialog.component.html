@@ -12,15 +12,20 @@
         <input type="titulo" [(ngModel)]="educacion.titulo" [ngModelOptions]="{standalone: true}" class="form-control"
           id="inputTitulo">
       </div>
-      <div class="mb-3">
-        <label for="inputInicio" class="form-label">Fecha de inicio:</label>
-        <input type="ubicacion" [(ngModel)]="educacion.inicio" [ngModelOptions]="{standalone: true}"
-          class="form-control" id="inputInicio">
-      </div>
-      <div class="mb-3">
-        <label for="inputFin" class="form-label">Fecha de finalización:</label>
-        <input type="fin" [(ngModel)]="educacion.fin" class="form-control" id="inputFin">
-      </div>
+      <mat-form-field>
+        <mat-label>Fecha de Inicio:</mat-label>
+        <input matInput [matDatepicker]="pickerStart"   [(ngModel)]="educacion.inicio" [ngModelOptions]="{standalone: true}">
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="pickerStart"></mat-datepicker-toggle>
+        <mat-datepicker #pickerStart></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Fecha de Finalización:</mat-label>
+        <input matInput [matDatepicker]="pickerEnd"  [(ngModel)]="educacion.fin" [ngModelOptions]="{standalone: true}">
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+        <mat-datepicker #pickerEnd></mat-datepicker>
+      </mat-form-field>
       <div class="mb-3">
         <label for="inputImage" class="form-label">Subí la imagen del logo de la empresa/institución:</label>
         <input type="text" [(ngModel)]="educacion.escuela_image" [ngModelOptions]="{standalone: true}"

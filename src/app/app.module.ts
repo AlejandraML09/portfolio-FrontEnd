@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -28,8 +27,10 @@ import { AddSkillDialogComponent } from './components/modals/add-skill-dialog/ad
 import { EditSkillsDialogComponent } from './components/modals/edit-skills-dialog/edit-skills-dialog.component';
 import { AddProjectDialogComponent } from './components/modals/add-project-dialog/add-project-dialog.component';
 import { EditProjectDialogComponent } from './components/modals/edit-project-dialog/edit-project-dialog.component';
-
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -54,8 +55,6 @@ import { EditProjectDialogComponent } from './components/modals/edit-project-dia
     EditSkillsDialogComponent,
     AddProjectDialogComponent,
     EditProjectDialogComponent,
-
-
   ],
   imports: [
     BrowserModule,
@@ -64,10 +63,16 @@ import { EditProjectDialogComponent } from './components/modals/edit-project-dia
     ReactiveFormsModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    MatDialogModule,
-    FormsModule
+    FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-AR' }],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }

@@ -28,9 +28,12 @@ export class ProjectsComponent  {
     const dialogRef = this.dialog.open(AddProjectDialogComponent);
     dialogRef.afterClosed().subscribe(proyecto => {
       console.log("guardando projects", JSON.stringify(proyecto))
-      const id = this.loginService.getUserLoggedIn()!.user_id
-      console.log("id", id)
-      this.portfolioService.addProyecto(id, proyecto).subscribe(postResult => console.log('esto es el postResult', postResult))
+      if(proyecto) {
+        const id = this.loginService.getUserLoggedIn()!.user_id
+        console.log("id", id)
+        this.portfolioService.addProyecto(id, proyecto).subscribe(postResult => console.log('esto es el postResult', postResult))
+        this.portfolioData.proyectos.push(proyecto)
+      }
     });
   }
 
