@@ -1,30 +1,33 @@
 <div class="popup-container">
-    <h2 mat-dialog-title>Editar Proyecto</h2>
-    <mat-dialog-content class="mat-typography">
-      <form>
-        <div class="mb-3">
-          <label for="exampleInputNombreProyecto" class="form-label">Nombre del Proyecto</label>
-          <input type="nProyecto" [(ngModel)]="data.portfolioData.proyectos[data.projectIndex].nombre_proyecto"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputNombreProyecto">
-        </div>
-        <div class="mb-3">
-        <label for="exampleInputDescripcion" class="form-label">Descripción del Proyecto</label>
-          <textarea class="form-control" id="descripcion" rows="3" [(ngModel)]="data.portfolioData.proyectos[data.projectIndex].descripcion"  [ngModelOptions]="{standalone: true}" ></textarea>
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputInicio" class="form-label">Fecha de inicio:</label>
-          <input type="fInicio" [(ngModel)]="data.portfolioData.proyectos[data.projectIndex].fecha_inicio"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputInicio">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputFin" class="form-label">Fecha de finalización:</label>
-            <input type="fin" [(ngModel)]="data.portfolioData.proyectos[data.projectIndex].fecha_final" 
-            [ngModelOptions]="{standalone: true}"
-            class="form-control" id="exampleInputFin">
-          </div>
-      </form>
-    
-    </mat-dialog-content>
-    <mat-dialog-actions align="end">
-      <button  class="btn btn-primary" mat-button mat-dialog-close>Cancel</button>
-      <button  class="btn btn-primary"  mat-button [mat-dialog-close]="data.portfolioData" cdkFocusInitial>Guardar</button>
-    </mat-dialog-actions>
-  </div>
+  <h2 mat-dialog-title>Editar Proyecto</h2>
+  <mat-dialog-content class="mat-typography">
+    <form>
+      <div class="mb-3">
+        <label for="inputNombreProyecto" class="form-label">Nombre del Proyecto</label>
+        <input type="nProyecto" [(ngModel)]="data.portfolioData.proyectos[data.projectIndex].nombre_proyecto"
+          [ngModelOptions]="{standalone: true}" class="form-control" id="inputNombreProyecto">
+      </div>
+      <div class="mb-3">
+        <label for="inputDescripcion" class="form-label">Descripción del Proyecto</label>
+        <textarea class="form-control" id="descripcion" rows="3"
+          [(ngModel)]="data.portfolioData.proyectos[data.projectIndex].descripcion"
+          [ngModelOptions]="{standalone: true}"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="inputInicio" class="form-label">Fecha de inicio:</label>
+        <input type="fInicio" [(ngModel)]="data.portfolioData.proyectos[data.projectIndex].fecha_inicio"
+          [ngModelOptions]="{standalone: true}" class="form-control" id="inputInicio">
+      </div>
+      <div class="mb-3">
+        <label for="inputFin" class="form-label">Fecha de finalización:</label>
+        <input type="fin" [(ngModel)]="data.portfolioData.proyectos[data.projectIndex].fecha_final"
+          [ngModelOptions]="{standalone: true}" class="form-control" id="inputFin">
+      </div>
+    </form>
+
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button class="btn btn-primary" mat-button mat-dialog-close>Cancel</button>
+    <button class="btn btn-primary" mat-button [mat-dialog-close]="data.portfolioData" cdkFocusInitial>Guardar</button>
+  </mat-dialog-actions>
+</div>

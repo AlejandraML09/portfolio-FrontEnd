@@ -3,37 +3,41 @@
   <mat-dialog-content class="mat-typography">
     <form>
       <div class="mb-3">
-        <label for="exampleInputNombre" class="form-label">Nombre</label>
-        <input type="nombre" [(ngModel)]="portfolioData.nombre"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputNombre">
+        <label for="inputNombre" class="form-label">Nombre</label>
+        <input type="nombre" [(ngModel)]="portfolioData.nombre" [ngModelOptions]="{standalone: true}"
+          class="form-control" id="inputNombre">
       </div>
       <div class="mb-3">
-        <label for="exampleInputApellido" class="form-label">Apellidos</label>
-        <input type="apellido" [(ngModel)]="portfolioData.apellido"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputApellido">
+        <label for="inputApellido" class="form-label">Apellidos</label>
+        <input type="apellido" [(ngModel)]="portfolioData.apellido" [ngModelOptions]="{standalone: true}"
+          class="form-control" id="inputApellido">
       </div>
       <div class="mb-3" *ngIf="portfolioData.experiencias.length">
-        <label for="exampleInputPuesto" class="form-label">Puesto</label>
-        <input type="puesto"
-        [(ngModel)]="portfolioData.experiencias[0].puesto"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputPuesto">
+        <label for="inputPuesto" class="form-label">Puesto</label>
+        <input type="puesto" [(ngModel)]="portfolioData.experiencias[0].puesto" [ngModelOptions]="{standalone: true}"
+          class="form-control" id="inputPuesto">
       </div>
       <div class="mb-3">
-        <label for="exampleInputContacto" class="form-label">Contacto</label>
-        <input type="contacto" [(ngModel)]="portfolioData.contacto"  [ngModelOptions]="{standalone: true}"
-         class="form-control" id="exampleInputContacto">
+        <label for="inputContacto" class="form-label">Contacto</label>
+        <input type="contacto" [(ngModel)]="portfolioData.contacto" [ngModelOptions]="{standalone: true}"
+          class="form-control" id="inputContacto">
       </div>
       <div class="mb-3">
-        <label for="exampleInputUbicacion" class="form-label">Ubicación</label>
-        <input type="ubicacion" [(ngModel)]="portfolioData.nacionalidad"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputUbicacion">
+        <label for="inputUbicacion" class="form-label">Ubicación</label>
+        <input type="ubicacion" [(ngModel)]="portfolioData.nacionalidad" [ngModelOptions]="{standalone: true}"
+          class="form-control" id="inputUbicacion">
       </div>
       <div class="mb-3">
-        <label for="exampleInputFin" class="form-label">Foto de perfil:</label>
-        <input type="text" [(ngModel)]="portfolioData.profile_picture" [ngModelOptions]="{standalone: true}"class="form-control" id="exampleInputFin">
+        <label for="inputImage" class="form-label">Foto de perfil:</label>
+        <input type="text" [(ngModel)]="portfolioData.profile_picture" [ngModelOptions]="{standalone: true}"
+          class="form-control" id="inputImage">
       </div>
-      <img class="image-preview" [src]="portfolioData.profile_picture"/>
+      <img class="image-preview" [src]="portfolioData.profile_picture" />
     </form>
-  
+
   </mat-dialog-content>
   <mat-dialog-actions align="end">
-    <button  class="btn btn-primary" mat-button mat-dialog-close>Cancel</button>
-    <button  class="btn btn-primary"  mat-button [mat-dialog-close]="portfolioData" cdkFocusInitial>Guardar</button>
+    <button class="btn btn-primary" mat-button mat-dialog-close>Cancel</button>
+    <button class="btn btn-primary" mat-button [mat-dialog-close]="portfolioData" cdkFocusInitial>Guardar</button>
   </mat-dialog-actions>
 </div>

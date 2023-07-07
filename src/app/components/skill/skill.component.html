@@ -3,7 +3,9 @@
         <div class="addExpOrEduButton">
             <div class="h4 text-center mb-4 title">Skills</div>
             <div class="add-button-container">
-                <button *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id" (click)="openAddSkillDialog()">
+                <button
+                    *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id"
+                    (click)="openAddSkillDialog()">
                     <fa-icon [icon]="faPlus" size="xl">
                     </fa-icon>
                 </button>
@@ -14,24 +16,31 @@
                 <div class="row">
                     <div class="col-md-6" *ngFor="let skill of portfolioData.skills;let i = index">
                         <div class="progress-container progress-primary">
-                            <span class="progress-badge">{{skill.lenguaje}}  
-                                <button *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id" (click)="openSkillEditDialog(i)">
+                            <span class="progress-badge">{{skill.lenguaje}}
+                                <button
+                                    *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id"
+                                    (click)="openSkillEditDialog(i)">
                                     <fa-icon [icon]="faPen" size="sm">
                                     </fa-icon>
                                 </button>
-                                
-                                <button *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id" (click)="openDeleteSkillSwall(i)">
-                                <fa-icon [icon]="faXmark" size="sm">
-                                </fa-icon>
-                            </button></span>
+
+                                <button
+                                    *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id"
+                                    (click)="openDeleteSkillSwall(i)">
+                                    <fa-icon [icon]="faXmark" size="sm">
+                                    </fa-icon>
+                                </button></span>
                             <div class="progress">
-                                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{skill.porcentaje_de_conocimiento}}"></div>
+                                <div class="progress-bar progress-bar-primary" data-aos="progress-full"
+                                    data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60"
+                                    aria-valuemin="0" aria-valuemax="100"
+                                    style="width: {{skill.porcentaje_de_conocimiento}}"></div>
                                 <span class="progress-value">{{skill.porcentaje_de_conocimiento}}</span>
                             </div>
                         </div>
                     </div>
-                    </div>
-          
+                </div>
+
+            </div>
         </div>
     </div>
-</div>

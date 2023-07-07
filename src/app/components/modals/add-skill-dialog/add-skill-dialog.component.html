@@ -1,15 +1,15 @@
 <div class="popup-container">
-    <h2 mat-dialog-title>Añadir nuevos skills:</h2>
+    <h2 mat-dialog-title>Añadir skills:</h2>
     <mat-dialog-content class="mat-typography">
       <form [formGroup]="form" (ngSubmit)="onSubmit()" #formRef>
         <div class="mb-3">
-          <label for="exampleInputPuesto" class="form-label">Lenguaje de Programación:</label>
-          <input type="text" name="lenguaje" formControlName="lenguaje"  class="form-control" id="exampleInputPuesto">
+          <label for="inputLenguaje" class="form-label">Lenguaje de Programación:</label>
+          <input type="text" name="lenguaje" formControlName="lenguaje"  class="form-control" id="inputLenguaje">
         </div>
         <div class="mb-3">
-          <label for="exampleInputNombreEmpresa" class="form-label">Porcentaje de Conocimiento:</label>
+          <label for="inputPorcentaje" class="form-label">Porcentaje de Conocimiento:</label>
           <input type="text"
-          name="porcentaje_de_conocimiento" formControlName="porcentaje_de_conocimiento" class="form-control" id="exampleInputNombreEmpresa">
+          name="porcentaje_de_conocimiento" formControlName="porcentaje_de_conocimiento" class="form-control" id="inputPorcentaje">
         </div>
       </form>
     

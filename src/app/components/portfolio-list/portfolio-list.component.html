@@ -23,7 +23,7 @@
 
         </div>
     </div>
-    <div  class="home_content">
+    <div class="home_content">
         <div class="profile_picture_container" *ngFor="let portfolio of portfolioList.filter(hasPicture); let j = index"
             [style]="'order:' + j">
             <p class="work-title-update">Actualización de proyecto de {{portfolio.nombre}} {{portfolio.apellido}}:</p>
@@ -105,6 +105,6 @@
         </div>
 
     </div>
- 
+
 </div>
 <app-spinner class="spinner" *ngIf="this.isLoading"></app-spinner>

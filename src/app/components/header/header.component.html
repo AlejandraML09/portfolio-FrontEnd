@@ -1,12 +1,13 @@
 <div class="card_container no-padding">
-    <div id="profile-background" 
-    [ngStyle]="{'background-image':'url(' + portfolioHeader?.banner_image+ ')'}">
+    <div id="profile-background" [ngStyle]="{'background-image':'url(' + portfolioHeader?.banner_image+ ')'}">
         <img class="profile-image" [src]="portfolioHeader?.profile_picture" alt="">
         <div class="btn-edit"><a href="#" class="btn-right"></a></div>
     </div>
 
     <div class="edit-button-container edit_pen">
-        <button *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioHeader.id" (click)="openDialog()">
+        <button
+            *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioHeader.id"
+            (click)="openDialog()">
             <fa-icon [icon]="faPen" size="lg">
             </fa-icon>
         </button>
@@ -15,16 +16,18 @@
     <div class="info-data-container">
         <div id="info-data">
             <div *ngIf="portfolioHeader?.experiencias">
-                <h1>{{portfolioHeader?.nombre + " "  + portfolioHeader?.apellido}}</h1>
+                <h1>{{portfolioHeader?.nombre + " " + portfolioHeader?.apellido}}</h1>
                 <div id="info-company">{{portfolioHeader.experiencias[0]?.puesto}}</div>
                 <div id="info-contact">
                     <span id="info-lugar">{{portfolioHeader?.nacionalidad}}</span>
-                    <span id="info-contact-url"><a href="https://www.linkedin.com/in/alejandra-melisa-l%C3%B3pez/">Información de Contacto</a></span>
+                    <span id="info-contact-url"><a
+                            href="https://www.linkedin.com/in/alejandra-melisa-l%C3%B3pez/">Información de
+                            Contacto</a></span>
                     <fa-icon class="faLinkedin" [icon]="faLinkedin" size="lg">
                     </fa-icon>
                 </div>
             </div>
-    
+
             <ul id="info-details">
                 <li *ngIf="portfolioHeader?.experiencias">
                     <a class="info-details-container" href="#">

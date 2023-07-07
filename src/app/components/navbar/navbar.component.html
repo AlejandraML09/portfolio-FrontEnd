@@ -6,12 +6,12 @@
 
   <div class="navbar-login-container">
     <div *ngIf="!this.loginService.isLogged(); else elseBlock">
-      <button  class="btn btn-primary login-button"
-      (click)="openLoginDialog()">Iniciar sesion</button>
+      <button class="btn btn-primary login-button" (click)="openLoginDialog()">Iniciar sesion</button>
     </div>
-     
+
     <ng-template #elseBlock>
-      <a [href]="'/portfolio/'+loginService.getUserLoggedIn()?.user_id"><img class="logged-image" [src]="this.loginService.getUserLoggedIn()?.profile_picture" alt=""></a>
+      <a [href]="'/portfolio/'+loginService.getUserLoggedIn()?.user_id"><img class="logged-image"
+          [src]="this.loginService.getUserLoggedIn()?.profile_picture" alt=""></a>
       <button class="btn btn-primary login-button" (click)="this.loginService.logout()">Cerrar sesion</button>
     </ng-template>
   </div>
