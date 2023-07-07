@@ -83,7 +83,12 @@ export class ExperienceComponent {
     console.log(dataForModal)
     const dialogRef = this.dialog.open(EditExperienceDialogComponent, dataForModal);
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      console.log(`Dialog result`);
+      console.log(result)
+    if (result) {
+      const id = this.loginService.getUserLoggedIn()!.user_id
+      this.portfolioService.editPortfolio(id, result).subscribe(postResult => console.log('esto es el postResult', postResult))
+    }
     });
   }
 

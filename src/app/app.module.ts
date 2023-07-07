@@ -25,6 +25,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { AddExperienceDialogComponent } from './components/modals/add-experience-dialog/add-experience-dialog.component';
 import { AddEducationDialogComponent } from './components/modals/add-education-dialog/add-education-dialog.component';
 import { AddSkillDialogComponent } from './components/modals/add-skill-dialog/add-skill-dialog.component';
+import { EditSkillsDialogComponent } from './components/modals/edit-skills-dialog/edit-skills-dialog.component';
 
 
 
@@ -48,6 +49,7 @@ import { AddSkillDialogComponent } from './components/modals/add-skill-dialog/ad
     AddExperienceDialogComponent,
     AddEducationDialogComponent,
     AddSkillDialogComponent,
+    EditSkillsDialogComponent,
 
 
   ],

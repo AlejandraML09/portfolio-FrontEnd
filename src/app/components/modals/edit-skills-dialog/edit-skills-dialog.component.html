@@ -1,0 +1,20 @@
+<div class="popup-container">
+    <h2 mat-dialog-title>Experiencia</h2>
+    <mat-dialog-content class="mat-typography">
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputPuesto" class="form-label">Puesto</label>
+          <input type="puesto" [(ngModel)]="data.portfolioData.skills[data.skillIndex].lenguaje"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputPuesto">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputNombreEmpresa" class="form-label">Nombre de la empresa</label>
+          <input type="nombre_empresa" [(ngModel)]="data.portfolioData.skills[data.skillIndex].porcentaje_de_conocimiento"  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputNombreEmpresa">
+        </div>
+      </form>
+    
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button  class="btn btn-primary" mat-button mat-dialog-close>Cancel</button>
+      <button  class="btn btn-primary"  mat-button [mat-dialog-close]="data.portfolioData" cdkFocusInitial>Guardar</button>
+    </mat-dialog-actions>
+  </div>

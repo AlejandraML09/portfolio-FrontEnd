@@ -21,7 +21,9 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputFin" class="form-label">Fecha de finalización:</label>
-                <input type="fin" [(ngModel)]="data.portfolioData.experiencias[data.experienceIndex].fin" class="form-control" id="exampleInputFin">
+                <input type="fin" [(ngModel)]="data.portfolioData.experiencias[data.experienceIndex].fin" 
+                [ngModelOptions]="{standalone: true}"
+                class="form-control" id="exampleInputFin">
               </div>
           </form>
         

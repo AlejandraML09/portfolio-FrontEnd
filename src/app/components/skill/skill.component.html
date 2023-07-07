@@ -14,8 +14,14 @@
                 <div class="row">
                     <div class="col-md-6" *ngFor="let skill of portfolioData.skills;let i = index">
                         <div class="progress-container progress-primary">
-                            <span class="progress-badge">{{skill.lenguaje}}       <button *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id" (click)="openDeleteSkillSwall(i)">
-                                <fa-icon [icon]="faXmark" size="xl">
+                            <span class="progress-badge">{{skill.lenguaje}}  
+                                <button *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id" (click)="openSkillEditDialog(i)">
+                                    <fa-icon [icon]="faPen" size="sm">
+                                    </fa-icon>
+                                </button>
+                                
+                                <button *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id" (click)="openDeleteSkillSwall(i)">
+                                <fa-icon [icon]="faXmark" size="sm">
                                 </fa-icon>
                             </button></span>
                             <div class="progress">
