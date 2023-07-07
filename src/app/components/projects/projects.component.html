@@ -13,14 +13,16 @@
             <div>
                 <div class="project-edit-container">
                 <h4 class="projects-title">{{project.nombre_proyecto}}</h4>
-                    <!-- <button *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id" (click)="openProjectEditDialog(i)">
-                        <fa-icon [icon]="faPen" size="lg">
-                        </fa-icon>
-                    </button> -->
-                    <button *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id" (click)="openDeleteProjectSwall(i)">
-                        <fa-icon [icon]="faXmark" size="xl">
-                        </fa-icon>
-                    </button>
+                    <div class="project-buttons-container">
+                        <button *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id" (click)="openProjectEditDialog(i)">
+                            <fa-icon [icon]="faPen" size="lg">
+                            </fa-icon>
+                        </button>
+                        <button *ngIf="this.loginService.isLogged() && this.loginService.getUserLoggedIn()?.user_id == portfolioData.id" (click)="openDeleteProjectSwall(i)">
+                            <fa-icon [icon]="faXmark" size="xl">
+                            </fa-icon>
+                        </button>
+                    </div>
                 </div>
                 <p class="projects-years">{{project.fecha_inicio | date: 'MMM yyyy'}} - {{project.fecha_final | date:
                     'MMM yyyy' }}</p>

@@ -1,11 +1,12 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { faArrowRightFromFile, faArrowUpRightFromSquare,faPlus, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightFromFile, faArrowUpRightFromSquare,faPlus, faXmark, faPen } from '@fortawesome/free-solid-svg-icons';
 import { PortfolioData, Project, emptyPorfolio } from 'src/app/model/portfoliodata';
 import { LoginService } from 'src/app/services/login.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { AddProjectDialogComponent } from '../modals/add-project-dialog/add-project-dialog.component';
 import Swal from 'sweetalert2';
+import { EditProjectDialogComponent } from '../modals/edit-project-dialog/edit-project-dialog.component';
 
 
 @Component({
@@ -20,6 +21,7 @@ export class ProjectsComponent  {
 
   faArrowUpRightFromSquare = faArrowUpRightFromSquare
   faPlus = faPlus;
+  faPen = faPen;
   faXmark = faXmark;
 
   openAddProjectDialog() {
@@ -46,5 +48,21 @@ export class ProjectsComponent  {
     })
   }
 
+  openProjectEditDialog(index:number) {
+      let dataForModal = { 
+      data: {
+        portfolioData: this.portfolioData,
+        projectIndex: index,
+      }
+    }
+    const dialogRef = this.dialog.open(EditProjectDialogComponent, dataForModal);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      if (result) {
+        const id = this.loginService.getUserLoggedIn()!.user_id
+        this.portfolioService.editPortfolio(id, result).subscribe(postResult => console.log('esto es el postResult', postResult))
+      }
+    });
+  }
 
 }
