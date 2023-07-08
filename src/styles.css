@@ -74,17 +74,36 @@ body {
 @media (max-width: 768px) {
   .popup-container {
     width: 500px;
+
+  }
+  mat-dialog-actions {
+    display:flex;
+    flex-direction: row;
+    align-self: center;
   }
 }
 
 @media (max-width: 576px) {
   .popup-container {
     width: 340px;
+    padding:10px;
+  }
+  mat-dialog-actions {
+    display:flex;
+    flex-direction: row;
+    align-self: center;
   }
 }
 @media (max-width: 368px) {
   .popup-container {
-    width: 250px;
+    width: 200px;
+    padding:5px;
+    
+  }
+  mat-dialog-actions {
+    display:flex;
+    flex-direction: row;
+    align-self: center;
   }
 }
 
