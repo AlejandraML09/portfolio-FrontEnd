@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { faPen, faXmark, faPlus } from '@fortawesome/free-solid-svg-icons';
 import {
   Educacion,

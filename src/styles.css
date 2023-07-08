@@ -1,50 +1,98 @@
 .card_container {
-    border-radius: 32px;
-    border: 1px solid #e2e2e2;
-    overflow: hidden;
-    margin: 10px;
-    padding-top: 1em;
-    padding-bottom:1em;
-    background-color: white;
+  border-radius: 32px;
+  border: 1px solid #e2e2e2;
+  overflow: hidden;
+  margin: 10px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: white;
 }
 
 .btn-primary {
-    margin-left: 2em;
+  margin-left: 2em;
 }
 
 .info-buttons-container {
-    padding-bottom: 1em;
+  padding-bottom: 1em;
 }
 
 .edit-button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding: 1.3em;
-    height:70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 1.3em;
+  height: 70px;
 }
-
 
 .popup-container {
-    padding: 2em;
-    width:1000px;
+  padding: 2em;
+  width: 1000px;
 }
 
-button { 
-    border: 0px transparent;
-    background-color: transparent;
+button {
+  border: 0px transparent;
+  background-color: transparent;
 }
-html, body { height: 100%; margin: 0; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .no-margin {
-    margin: 0px;
-  }
-
-  .addExpOrEduButton {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  margin: 0px;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.addExpOrEduButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1200px) {
+  .popup-container {
+    width: 800px;
+  }
+}
+
+@media (max-width: 992px) {
+  .popup-container {
+    width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .popup-container {
+    width: 500px;
+  }
+}
+
+@media (max-width: 576px) {
+  .popup-container {
+    width: 340px;
+  }
+}
+@media (max-width: 368px) {
+  .popup-container {
+    width: 250px;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
